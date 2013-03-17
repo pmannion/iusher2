@@ -1,0 +1,195 @@
+// Place all the styles related to the Users controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+
+#main_wrapper {
+  width:1100px;
+  height:800px;
+  margin-top: 0px;
+  margin-left: 60px;
+  background-image: url("signup2.png");
+  background-repeat:no-repeat;
+  z-index: 10000;
+
+}
+
+#plain_wrapper {
+  width:1100px;
+  height:800px;
+  margin-top: 0px;
+  margin-left: 60px;
+  z-index: 10000;
+
+}
+
+.green_gradient {
+  width:1100px;
+  height:700px;
+  margin-top: 0px;
+  margin-left: 60px;
+  background-image: url("green_gradient1.png");
+  background-repeat:no-repeat;
+  z-index: 10000;
+
+}
+
+
+#form-container {
+  margin-left:50px;
+  font-family:helvetica;
+  font-size: 15px;
+  padding-top:35px;
+}
+
+
+#nav li {
+  display: inline;
+
+
+}
+
+#nav li a {
+  font-family: helvetica;
+  font-size:20px;
+  text-decoration: none;
+  float:right;
+  padding: 10px;
+
+  color: #fff;
+}
+
+#nav li a:hover {
+
+  margin-top:-2px;
+  padding-bottom:12px;
+}
+
+h2 {
+  font-family: moiser;
+  font-size: 40px;
+  color:white;
+  padding-top:30px;
+  margin-left:50px;
+
+}
+
+@-webkit-keyframes greenPulse {
+from { background-color: #749a02; -webkit-box-shadow: 0 0 9px #333; }
+50% { background-color: #91bd09; -webkit-box-shadow: 0 0 18px #91bd09; }
+to { background-color: #749a02; -webkit-box-shadow: 0 0 9px #333; }
+}
+.green.button {
+  -webkit-animation-name: greenPulse;
+  -webkit-animation-duration: 2s;
+  -webkit-animation-iteration-count: infinite;
+  -webkit-border-radius: 8px;
+  background-color: #7cfc00;
+  font-size: 20px ;
+  font-family: moiser;
+  color:white;
+  padding: 3px;
+  width:100px;
+
+
+}
+
+#pic-border-green {
+
+  height:90px;
+  width:90px;
+  background-color: #ff0000;
+  -webkit-border-radius: 4px;
+  margin-top:50px;
+  margin-left:60px;
+}
+
+#pic-border-green {
+
+  height:90px;
+  width:90px;
+  background-color: #7cfc00;
+  -webkit-border-radius: 4px;
+  margin-top:10px;
+  margin-left:60px;
+}
+
+
+#pic-green {
+position:absolute;
+margin:5px;
+
+}
+
+
+#pic-red {
+  position:absolute;
+  margin:5px;
+
+}
+
+#personal-info {
+  position:absolute;
+  top:65px;
+  right:265px;
+  left:180px;
+
+  font-family:arial;
+  font-size: 0.75em;
+  font-weight: lighter;
+
+}
+
+hr {
+  position:relative ;
+  top:20px;
+  left: 60px;
+}
+
+.left-60 {
+  position:absolute;
+  left:60px;
+}
+
+#userposts {
+  position:absolute;
+  top:220px;
+  left:60px;
+
+}
+
+#post-seperate{
+  border-bottom: 1px solid #808080;
+  margin:10px 250px 20px 340px;
+
+}
+
+#talking {
+
+  margin:47px 250px 20px 340px;
+  padding-top:5px;
+  padding-left:10px;
+  border: 1px solid #d3d3d3;
+  -webkit-border-radius:5px;
+  background-color: #f5f5f5;
+  color: #2f4f4f;
+}
+
+#friend-list {
+  position: absolute;
+  width:270px;
+  margin:-55px 0px 20px 780px;
+  padding-top:5px;
+  padding-left:10px;
+  border: 1px solid #d3d3d3;
+  -webkit-border-radius:5px;
+  background-color: #f5f5f5;
+  color: #2f4f4f;
+}
+
+a:visited {
+  color:white;
+}
+
+
+

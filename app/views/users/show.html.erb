@@ -1,0 +1,76 @@
+<% if signed_in? && @user.trust_level == "trusted" %>
+
+ <div id="pic-border-green">
+
+   <div id="pic-green">
+
+     <%= gravatar_for @user %>
+
+   </div>
+
+   </div>
+
+
+
+
+   <div id="personal-info">
+     <h3><%= @user.full_name %></h3>
+     Profile Name:  <%= @user.profile_name %><br/>
+     Member Since:  <%= @user.created_at.strftime("%d %b. %Y") %><br/>
+     Member Type:  <%= @user.user_type %> user<br/>
+     Member Status:  <%= @user.trust_level %><br/>
+     <%= link_to "Connect", "#" , class: "btn btn-info" %>
+    </div>
+    <hr />
+    <div id="userposts">
+      <%= link_to 'New Post', new_post_path, class: "btn btn-success" %>
+      <%= link_to 'Make a complaint', new_complaint_path, class: "btn btn-success" %>
+    </div>
+
+    <div id="talking">
+      <p>Comments</p>
+    </div>
+
+    <div id="friend-list">
+      <p>Friends</p>
+    </div>
+
+    <% @post.each do |post| %>
+        <div id="post-seperate">
+
+          <div class="status">
+            <div class="row">
+              <div class="span7">
+                <%= gravatar_for @user%>
+                <%= post.content %>
+                <div class="meta">
+                  <%= link_to time_ago_in_words(post.created_at) + " " + "ago", post %>
+                  <span class="admin">
+
+    <%= link_to 'Show', post %>
+                    <%= link_to 'Edit', edit_post_path(post) %>
+                    <%= link_to 'Destroy', post, method: :delete, data: { confirm: 'Are you sure?' } %>
+       </span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+    <% end %>
+
+
+
+
+    <% if signed_in? && @user.trust_level != "trusted" %>
+        <div id="pic-border">
+          <div id="pic-red">
+            <%= gravatar_for @user %>
+          </div>
+        </div>
+        <h1><%= @user.full_name %></h1>
+
+        <hr />
+       <% else %>
+
+<% end %>
+<% end %>

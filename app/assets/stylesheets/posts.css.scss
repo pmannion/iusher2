@@ -1,0 +1,40 @@
+// Place all the styles related to the Posts controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+@-webkit-keyframes greenPulse {
+from { background-color: #749a02; -webkit-box-shadow: 0 0 9px #333; }
+50% { background-color: #91bd09; -webkit-box-shadow: 0 0 18px #91bd09; }
+to { background-color: #749a02; -webkit-box-shadow: 0 0 9px #333; }
+}
+.post.button {
+  -webkit-animation-name: greenPulse;
+  -webkit-animation-duration: 2s;
+  -webkit-animation-iteration-count: infinite;
+  -webkit-border-radius: 8px;
+  background-color: #7cfc00;
+  font-size: 20px ;
+  font-family: arial;
+  color:white;
+  padding: 3px;
+  width:300px;
+  text-decoration: none;
+  margin:10px 500px 100px 0px;
+  padding:10px 15px 10px 15px;
+
+
+}
+
+.field {
+  height:150px;
+  width:250px;
+
+}
+
+#post-seperate{
+  border-bottom: 2px solid #808080;
+  margin:40px 300px 20px 350px;
+
+
+
+}

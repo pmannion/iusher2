@@ -1,0 +1,22 @@
+<%= form_for(@post) do |f| %>
+    <% if @post.errors.any? %>
+        <div id="error_explanation">
+          <h3><%= pluralize(@post.errors.count, "error") %> prohibited this post from being saved:</h3>
+
+          <ul>
+            <% @post.errors.full_messages.each do |msg| %>
+                <li><%= msg %></li>
+            <% end %>
+          </ul>
+        </div>
+    <% end %>
+
+    <div class="field">
+      <%= link_to 'Back', posts_path %>
+      <%= f.text_area :content %>
+
+
+    </div>
+    <%= button_to "Submit New Post", posts_path, class: "post button" %>
+
+<% end %>

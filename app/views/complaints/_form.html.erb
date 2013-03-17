@@ -1,0 +1,58 @@
+<script src="http://www.google.com/jsapi"></script>
+<script>
+    google.load("jquery", "1.4.1");
+</script>
+
+<script>
+    navigator.geolocation.getCurrentPosition(
+            function(pos) {
+                $("#lat_field").val(pos.coords.latitude);
+                $("#long_field").val(pos.coords.longitude);
+            }
+    );
+</script>
+
+
+<%= form_for(@complaint) do |f| %>
+  <% if @complaint.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@complaint.errors.count, "error") %> prohibited this complaint from being saved:</h2>
+
+      <ul>
+      <% @complaint.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+
+
+    <%= f.label :branch %><br />
+    <%= f.text_field :branch %>
+
+
+    <%= f.label :screen %><br />
+    <%= f.number_field :screen %>
+
+
+    <%= f.label :seat %><br />
+    <%= f.number_field :seat %>
+
+
+    <%= f.label :comment %><br />
+    <%= f.text_field :comment %>
+
+    <div class="actions">
+      <%= f.submit %>
+    </div>
+
+
+    <%= f.hidden_field :longitude, :id => 'long_field'  %>
+
+
+    <%= f.hidden_field :latitude, :id => 'lat_field' %>
+
+
+
+<% end %>

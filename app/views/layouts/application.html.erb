@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Usher3</title>
+  <%= stylesheet_link_tag    "application", :media => "all" %>
+  <%= javascript_include_tag "application" %>
+  <%= csrf_meta_tags %>
+</head>
+<body>
+
+<% flash.each do |key, value| %>
+    <div class="alert alert-<%= key %>"><%= value %></div>
+<% end %>
+
+
+ <% if signed_in? %>
+
+<% else %>
+
+<%=  form_for(:session, url:sessions_path) do |f| %>
+    <div id="login">
+
+
+      <%= f.label :email %>
+      <%= f.text_field :email %>
+
+      <%= f.label :password %>
+      <%= f.password_field :password %>
+
+      <div class="actions">
+        <%= f.submit "Log in" %>
+      </div>
+    </div>
+      <% end %>
+   <% end %>
+
+
+
+<%= render 'layouts/header' %>
+
+<%= yield %>
+
+</body>
+</html>

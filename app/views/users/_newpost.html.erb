@@ -1,0 +1,11 @@
+
+
+<%=  form_for(:posts, url:posts_url) do |f| %>
+
+      <%= f.text_area :content , :cols => "80", :rows => "7" %>
+
+
+
+    <%= button_to "Submit New Post", @current_user, class: "post button" %>
+
+     <% end %>

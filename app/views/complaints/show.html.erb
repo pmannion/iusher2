@@ -1,0 +1,35 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Branch:</b>
+  <%= @complaint.branch %>
+</p>
+
+<p>
+  <b>Screen:</b>
+  <%= @complaint.screen %>
+</p>
+
+<p>
+  <b>Seat:</b>
+  <%= @complaint.seat %>
+</p>
+
+<p>
+  <b>Longitude:</b>
+  <%= @complaint.longitude%>
+</p>
+
+<p>
+  <b>Latitude:</b>
+  <%= @complaint.latitude  %>
+</p>
+
+<p>
+  <b>Comment:</b>
+  <%= @complaint.comment %>
+</p>
+
+
+<%= link_to 'Edit', edit_complaint_path(@complaint) %> |
+<%= link_to 'Back', complaints_path %>
