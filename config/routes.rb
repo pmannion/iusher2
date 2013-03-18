@@ -8,6 +8,8 @@ Usher3::Application.routes.draw do
 
   resources :users
 
+  resources :user_friendships
+
 
   resources :sessions, only:[:new, :create, :destroy]
 

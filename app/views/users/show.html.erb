@@ -12,15 +12,19 @@
 
 
 
-
    <div id="personal-info">
      <h3><%= @user.full_name %></h3>
      Profile Name:  <%= @user.profile_name %><br/>
      Member Since:  <%= @user.created_at.strftime("%d %b. %Y") %><br/>
      Member Type:  <%= @user.user_type %> user<br/>
      Member Status:  <%= @user.trust_level %><br/>
-     <%= link_to "Connect", "#" , class: "btn btn-info" %>
+
     </div>
+
+    <div id="connect">
+      <%= link_to " Connect ", new_user_friendship_path(friend_id: @user) , class: "btn btn-info" %>
+    </div>
+
     <hr />
     <div id="userposts">
       <%= link_to 'New Post', new_post_path, class: "btn btn-success" %>
@@ -28,11 +32,11 @@
     </div>
 
     <div id="talking">
-      <p>Comments</p>
+      <p><b>Comments</b></p>
     </div>
 
     <div id="friend-list">
-      <p>Friends</p>
+      <p><b>Friends</b></p>
     </div>
 
     <% @post.each do |post| %>

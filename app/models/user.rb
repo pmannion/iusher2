@@ -2,6 +2,8 @@ class User < ActiveRecord::Base
   attr_accessible :email, :first_name, :last_name, :password, :profile_name, :trust_level, :user_type
   has_many :posts
   has_many :complaints
+  has_many :user_friendships
+  has_many :friends, through: :user_friendships
   has_secure_password
 
   before_save { |user| user.email = email.downcase }
@@ -19,6 +21,7 @@ class User < ActiveRecord::Base
   def full_name
     first_name + " " + last_name
   end
+
 
 
   private
