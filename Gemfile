@@ -4,6 +4,7 @@ gem 'rails', '3.2.12'
 gem 'bootstrap-sass', '2.1'
 gem 'bcrypt-ruby', '3.0.1'
 gem 'factory_girl_rails', '4.1.0'
+gem 'state_machine'
 
 group :development, :test do
   gem 'sqlite3', '1.3.5'

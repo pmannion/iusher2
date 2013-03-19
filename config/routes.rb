@@ -8,19 +8,24 @@ Usher3::Application.routes.draw do
 
   resources :users
 
-  resources :user_friendships
+  resources :user_friendships do
+    member do
+      put :accept
+    end
+  end
+
 
 
   resources :sessions, only:[:new, :create, :destroy]
 
   get "info_pages/about"
-  get "users/index"
+
 
   match '/signup', to: 'users#new'
   match '/signin', to: 'sessions#new'
   match '/signout', to: 'sessions#destroy', via: :delete
 
-
+  get '/:id', to: 'users#show', as: 'profile'
 
   root to: 'users#new'
   # The priority is based upon order of creation:

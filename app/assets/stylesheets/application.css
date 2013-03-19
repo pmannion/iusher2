@@ -11,6 +11,15 @@
  *= require_self
  *= require_tree .
  */
+#plain-wrapper {
+    width:1100px;
+    height:800px;
+    margin-top: 0px;
+    margin-left: 60px;
+    z-index: 10000;
+
+}
+
 body{
 
 

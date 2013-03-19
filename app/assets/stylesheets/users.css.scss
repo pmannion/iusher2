@@ -4,9 +4,10 @@
 
 
 #main_wrapper {
+  position:absolute;
   width:1100px;
-  height:800px;
-  margin-top: 0px;
+  height:700px;
+  margin-top: -75px;
   margin-left: 60px;
   background-image: url("signup2.png");
   background-repeat:no-repeat;
@@ -174,6 +175,30 @@ a:visited {
   position:relative;
   margin: 25px 650px 5px 60px;
 }
+
+@-webkit-keyframes greenPulse {
+from { background-color: #749a02; -webkit-box-shadow: 0 0 9px #333; }
+50% { background-color: #91bd09; -webkit-box-shadow: 0 0 18px #91bd09; }
+to { background-color: #749a02; -webkit-box-shadow: 0 0 9px #333; }
+}
+.green.button {
+  -webkit-animation-name: greenPulse;
+  -webkit-animation-duration: 2s;
+  -webkit-animation-iteration-count: infinite;
+  -webkit-border-radius: 8px;
+  background-color: #7cfc00;
+  font-size: 20px ;
+  font-family: arial;
+  color:white;
+  padding: 3px;
+  width:300px;
+  text-decoration: none;
+  margin:-22px 740px 10px -50px;
+  padding:10px 15px 10px 15px;
+
+
+}
+
 
 
 
