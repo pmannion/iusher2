@@ -1,8 +1,4 @@
-
-
-
-
-
+<div id="plain-wrapper">
   <%= form_for @user_friendship, method: :post do |form| %>
     <div class="form form-actions">
       <%= form.hidden_field :friend_id, value: @friend.profile_name %>
@@ -10,4 +6,5 @@
       <%= link_to "Cancel", current_user, class: "btn btn-warning" %>
     </div>
 <% end %>
+</div>
 

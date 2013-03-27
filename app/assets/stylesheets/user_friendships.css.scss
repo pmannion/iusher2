@@ -2,3 +2,19 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
+ #contactpic {
+   position: absolute;
+   top: 250px;
+   right: 200px;
+   bottom: 300px;
+ }
+
+#contact-border {
+  position: absolute;
+  border: 4px solid cadetblue;
+  width: 700px;
+  height: 500px;
+  padding: 15px;
+  background-color:lightblue;
+  color: dimgray;
+}

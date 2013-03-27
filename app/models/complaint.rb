@@ -1,5 +1,8 @@
 class Complaint < ActiveRecord::Base
   attr_accessible :branch, :comment, :latitude, :longitude, :screen, :seat
+  validates :branch, presence: true
+  validates :screen, presence: true
+  validates :seat, presence: true
 
 
 
@@ -13,6 +16,7 @@ class Complaint < ActiveRecord::Base
     latitude
   end
 
+  #createing a admin_user model with branch name, address, longitude and latitude  may change this !
   def branch_longitude
     -6.315654299999999
   end
@@ -21,23 +25,20 @@ class Complaint < ActiveRecord::Base
     53.2983071
   end
 
-  def long_acceptable_dif
-    longitude
-  end
-
-  def minus_acceptable_dif
-    -0.300001
-  end
-
-
+  #No margin for error in co-ordinates, need to allow a minor difference e.g.(0.20)
   def trust_level
-    if user_longitude == branch_longitude && user_latitude == branch_latitude
-     "high"
+    if branch_latitude == user_latitude && user_longitude == branch_longitude
+      'High'
     else
-      "low"
+      'Low'
     end
   end
-
 end
+
+
+
+
+
+
 
 

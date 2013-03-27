@@ -12,31 +12,25 @@
     <div class="alert alert-<%= key %>"><%= value %></div>
 <% end %>
 
-
+<%= render 'layouts/header' %>
  <% if signed_in? %>
 
 <% else %>
 
 <%=  form_for(:session, url:sessions_path) do |f| %>
-    <div id="login">
+    <div id="login1">
+      <%= f.label :email %><%= f.text_field :email %>
+     </div>
+     <div id="login2">
+      <%= f.label :password %><%= f.password_field :password %><%= f.submit "Log in" %>
+     </div>
 
-
-      <%= f.label :email %>
-      <%= f.text_field :email %>
-
-      <%= f.label :password %>
-      <%= f.password_field :password %>
-
-      <div class="actions">
-        <%= f.submit "Log in" %>
-      </div>
-    </div>
       <% end %>
    <% end %>
 
 
 
-<%= render 'layouts/header' %>
+
 
 <%= yield %>
 

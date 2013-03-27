@@ -43,11 +43,11 @@ class PostsController < ApplicationController
   def create
     @post = current_user.posts.new(params[:post])
   if @post.save
-    flash[:success] = "your post has been created"
+    flash[:success] = 'your post has been created'
     redirect_to current_user
   else
     render @user
-    flash[:error] = "there was a problem"
+    flash[:error] = 'there was a problem'
   end
 end
 
@@ -61,7 +61,7 @@ end
         format.html { redirect_to @post, notice: 'Post was successfully updated.' }
         format.json { head :no_content }
       else
-        format.html { render action: "edit" }
+        format.html { render action: 'edit' }
         format.json { render json: @post.errors, status: :unprocessable_entity }
       end
     end
@@ -74,7 +74,7 @@ end
     @post.destroy
 
     respond_to do |format|
-      format.html { redirect_to posts_url }
+      format.html { redirect_to current_user }
       format.json { head :no_content }
     end
   end

@@ -2,6 +2,7 @@ class UserFriendshipsController < ApplicationController
 
   def index
     @user_friendships = current_user.user_friendships.all
+
   end
 
   def accept
@@ -16,6 +17,7 @@ class UserFriendshipsController < ApplicationController
 
   def edit
     @user_friendship = current_user.user_friendships.find(params[:id])
+    @friend = @user_friendship.friend
   end
 
   def new
@@ -33,14 +35,14 @@ class UserFriendshipsController < ApplicationController
 
   def create
     if params[:user_friendship] && params[:user_friendship].has_key?(:friend_id)
-      @friend = User.where(profile_name: params[:user_friendship][:friend_id]).first
+      @friend = User.where(first_name: params[:user_friendship][:friend_id]).first
       @user_friendship = UserFriendship.request(current_user, @friend)
        if @user_friendship.new_record?
          flash[:error] = "there was a problem with your request"
        else
       flash[:success] = "your request has been sent"
       end
-      redirect_to current_user
+      redirect_to user_path(@friend)
     else
       flash[:error] = "friend required"
       redirect_to root_path
@@ -51,7 +53,7 @@ class UserFriendshipsController < ApplicationController
     @user_friendship = current_user.user_friendships.find(params[:id])
     @user_friendship.destroy
     flash[:notice] = "You are no longer contacts"
-    redirect_to user_friendship_path
+    redirect_to current_user
   end
 end
 

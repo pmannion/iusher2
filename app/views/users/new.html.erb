@@ -1,7 +1,24 @@
-  <%= form_for(@user) do |f| %>
+  <%= form_for(@user)  do |f| %>
     <div id="main_wrapper">
       <h2>Register</h2>
+       <p id="intro">Enjoy your movie without interruptions</p>
+       <p id="subintro">- Connect and chat with others -</p>
 
+      <div id="cinemas">
+        <p>Where can you<br/>
+          use iUsher?
+        </p>
+        <%=  image_tag("vue.jpg") %>
+        <br/>
+        <br/>
+        <%=  image_tag("odeon.jpg") %>
+        <br/>
+        <br/>
+        <%=  image_tag("cineworld.jpg") %>
+        <br/>
+        <br/>
+        <%=  image_tag("omniplex.jpg") %>
+      </div>
       <div id="form-container">
 
         <%= f.label :first_name %><br/>
@@ -18,14 +35,14 @@
 
         <%= f.label :password %><br/>
         <%= f.password_field :password %><br />
+
+
         <br/>
         <br/>
 
         <%= f.submit "Join", :class => "green button" %>
-      </div>
-
-
- <% end %>
-
-
+        <br/>
+        <p>Already a member ? Sign in below.</p>
+        </div>
+   <% end %>
 </div>

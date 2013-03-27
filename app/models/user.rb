@@ -1,9 +1,9 @@
 class User < ActiveRecord::Base
-  attr_accessible :email, :first_name, :last_name, :password, :profile_name, :trust_level, :user_type
+  attr_accessible :email, :first_name, :last_name, :password, :profile_name, :trust_level, :user_type, :avatar
   has_many :posts
 
   has_many :complaints
-
+  has_attached_file :avatar, :styles => { :medium => "300x300>", :thumb => "100x100>" }, :default_url => "/images/:style/missing.png"
   has_many :user_friendships
   has_many :friends, through: :user_friendships,
            conditions: { user_friendships: { state: 'accepted' } }

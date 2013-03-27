@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130318163641) do
+ActiveRecord::Schema.define(:version => 20130322115123) do
 
   create_table "complaints", :force => true do |t|
     t.string   "branch"
@@ -49,12 +49,15 @@ ActiveRecord::Schema.define(:version => 20130318163641) do
     t.string   "profile_name"
     t.string   "email"
     t.string   "password"
-    t.string   "trust_level",     :default => "trusted"
-    t.string   "user_type",       :default => "regular"
-    t.datetime "created_at",                             :null => false
-    t.datetime "updated_at",                             :null => false
+    t.string   "trust_level",         :default => "trusted"
+    t.string   "user_type",           :default => "regular"
+    t.datetime "created_at",                                 :null => false
+    t.datetime "updated_at",                                 :null => false
     t.string   "password_digest"
     t.string   "remember_token"
+    t.string   "avatar_file_name"
+    t.string   "avatar_content_type"
+    t.integer  "avatar_file_size"
   end
 
   add_index "users", ["email"], :name => "index_users_on_email", :unique => true

@@ -18,7 +18,8 @@ Usher3::Application.routes.draw do
 
   resources :sessions, only:[:new, :create, :destroy]
 
-  get "info_pages/about"
+  match '/about', to: 'info_pages#about'
+  match '/contact', to: 'info_pages#contact'
 
 
   match '/signup', to: 'users#new'
