@@ -12,9 +12,9 @@
  *= require_tree .
  */
 #plain-wrapper {
-    width:1100px;
+    width:1000px;
     height:800px;
-    margin-top: 0px;
+    margin-top: 20px;
     margin-left: 60px;
     z-index: 10000;
 
@@ -35,6 +35,8 @@ body{
 #nav {
 
     position:absolute;
+    top:15px;
+    bottom:20px;
     width:1025px;
     height:60px;
     margin-left: 60px;
@@ -45,7 +47,7 @@ body{
 
 #logo {
     position:relative;
-    top:40px;
+    top:5px;
     right:900px;
     bottom:400px;
     left:60px;

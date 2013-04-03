@@ -1,12 +1,11 @@
 Usher3::Application.routes.draw do
 
-  resources :complaints
+    resources :admins
+    resources :users
+    resources :complaints
+    resources :posts
 
 
-  resources :posts
-
-
-  resources :users
 
   resources :user_friendships do
     member do
@@ -14,19 +13,25 @@ Usher3::Application.routes.draw do
     end
   end
 
-
+    match '/about', to: 'info_pages#about'
+    match '/contact', to: 'info_pages#contact'
 
   resources :sessions, only:[:new, :create, :destroy]
-
-  match '/about', to: 'info_pages#about'
-  match '/contact', to: 'info_pages#contact'
-
 
   match '/signup', to: 'users#new'
   match '/signin', to: 'sessions#new'
   match '/signout', to: 'sessions#destroy', via: :delete
 
   get '/:id', to: 'users#show', as: 'profile'
+
+  resources :admin_sessions, only:[:new, :create, :destroy]
+
+  match '/adminsonly', to: 'admins#new'
+  match '/adminsignin', to: 'admin_sessions#new'
+  match '/adminsignout', to: 'admins#destroy', via: :delete
+
+ get '/:id', to: 'admins#show', as: 'profile'
+
 
   root to: 'users#new'
   # The priority is based upon order of creation:

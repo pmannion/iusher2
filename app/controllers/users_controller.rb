@@ -21,7 +21,7 @@ class UsersController < ApplicationController
   def create
     @user = User.new(params[:user])
     if @user.save
-      flash[:success] = "you have successfully created your account, please login in !"
+      flash[:success] = 'you have successfully created your account, please login in !'
       redirect_to root_path
 
     else

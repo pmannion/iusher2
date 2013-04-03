@@ -7,6 +7,8 @@ class Complaint < ActiveRecord::Base
 
 
   belongs_to :user
+  belongs_to :admin
+
 
   def user_longitude
     longitude

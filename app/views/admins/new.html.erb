@@ -1,0 +1,31 @@
+
+<%= form_for(@admin) do |f| %>
+    <div id="main_wrapper">
+      <h2>Admin Register</h2>
+      <p id="intro">This section is for Admin only</p>
+      <p id="subintro">- If You are not admin you can sign up for an account <%= link_to "Click here !", root_path %> -</p>
+
+      <div id="form-container">
+    <%= f.label :company %>
+    <%= f.text_field :company %>
+
+    <%= f.label :branch %>
+    <%= f.text_field :branch %>
+
+    <%= f.label :longitude %>
+    <%= f.text_field :longitude %>
+
+    <%= f.label :latitude %>
+    <%= f.text_field :latitude %>
+
+     <%= f.label :email %>
+     <%= f.text_field :email %>
+
+     <%= f.label :password %>
+     <%= f.password_field :password %>
+    <br/>
+    <%= f.submit 'create admin account' %>
+
+<% end %>
+   </div>
+</div>

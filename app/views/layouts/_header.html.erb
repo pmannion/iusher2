@@ -4,26 +4,31 @@
   </div>
 
   <div id="nav">
-
     <ul>
-      <% if signed_in? %>
-      <li><%= link_to "Log out",signout_path, method: "delete" %></li>
+      <% if current_user && signed_in? %>
+      <li><%= link_to "Log out",signout_path, method: 'delete' %></li>
         <li><%= link_to "News Feed", @current_user  %></li>
         <li><%= link_to "Buddy list", user_friendships_path  %></li>
         <li><%= link_to 'About', about_path  %></li>
         <li><%= link_to 'Contact Us', contact_path  %></li>
           <li><%= link_to 'Find a Buddy', users_path  %></li>
         <li><%= link_to "Home", root_path %></li>
-        <% else %>
+        <% else  %>
+          <% if current_admin && admin_signed_in? %>
+              <li><%= link_to 'Sign Out', signout_path, method: 'delete' %></li>
+              <li><%= link_to 'Complaints', complaints_path %></li>
+              <li><%= link_to 'News Feed', @current_admin %></li>
           <li><%= link_to 'Contact Us', contact_path  %></li>
           <li><%= link_to 'About', about_path  %></li>
           <li><%= link_to "Home", root_path %></li>
+
+              </ul>
+          <% end %>
+
+
+
       <% end %>
 
-    </ul>
-  </div>
-</div>
-<br/>
-<br/>
-<br/>
+    </div>
 
+    </div>

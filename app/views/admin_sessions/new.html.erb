@@ -1,0 +1,20 @@
+<div id="main_wrapper">
+
+<h2>Admin Sign in</h2>
+  <p id="intro">This section is for Admin only</p>
+  <p id="subintro">- If You are not admin you can sign up for an account <%= link_to "Click here !", root_path %> -</p>
+
+  <div id="form-container">
+
+<!--form for session requires extra information (due to no model existing) see 'url: admin_sessions_path' compared to @user form-->
+<%= form_for(:admin_session, url: admin_sessions_path ) do |f| %>
+    <%= f.label :email %>
+    <%= f.text_field :email %>
+
+    <%= f.label :password %>
+    <%= f.password_field :password %>
+
+    <%= f.submit 'Sign in' %>
+<% end %>
+ </div>
+</div>

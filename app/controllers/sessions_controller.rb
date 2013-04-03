@@ -9,13 +9,13 @@ class SessionsController < ApplicationController
       redirect_to @current_user
     else
       redirect_to root_path
-      flash[:error] = "email/password combo incorrect"
+      flash[:error] = 'email/password combo incorrect'
   end
 end
 
   def destroy
     sign_out
     redirect_to root_url
-    flash[:success] = "you have successfully signed out     "
+    flash[:success] = 'you have successfully signed out     '
   end
 end

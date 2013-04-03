@@ -16,7 +16,7 @@
  <% if signed_in? %>
 
 <% else %>
-
+        <% if @user %>
 <%=  form_for(:session, url:sessions_path) do |f| %>
     <div id="login1">
       <%= f.label :email %><%= f.text_field :email %>
@@ -25,8 +25,11 @@
       <%= f.label :password %><%= f.password_field :password %><%= f.submit "Log in" %>
      </div>
 
+
+
       <% end %>
    <% end %>
+  <% end %>
 
 
 

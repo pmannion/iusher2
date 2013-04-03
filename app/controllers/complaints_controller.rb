@@ -4,6 +4,7 @@ class ComplaintsController < ApplicationController
   def index
     @complaints = Complaint.all
     @user = User.all
+    @admin = Admin.all
 
     respond_to do |format|
       format.html # index.html.erb

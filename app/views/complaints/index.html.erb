@@ -15,7 +15,9 @@
     <th></th>
   </tr>
 
+
 <% @complaints.each do |complaint| %>
+
   <tr>
     <td><%= complaint.branch %></td>
     <td><%= complaint.screen %></td>
@@ -29,6 +31,7 @@
     <td><%= link_to 'Destroy', complaint, method: :delete, data: { confirm: 'Are you sure?' } %></td>
   </tr>
 <% end %>
+
 </table>
 
 <br />
