@@ -1,0 +1,24 @@
+<!--all the posts scoped to the user-->
+
+<div id="post">
+<% @post.each do |post| %>
+    <div id="post-seperate">
+      <div class="status">
+        <div class="row">
+          <div class="span7a">
+            <%= gravatar_for @user, size: 60 %>
+            <%= post.content %>
+            <div class="meta">
+              <%= time_ago_in_words(post.created_at) + " " + "ago" %>
+              <span class='admin'>
+
+                <%= link_to 'Edit', edit_post_path(post) %>
+                  <%= link_to 'Delete', post, method: :delete, data: { confirm: 'Are you sure?' } %>
+              </span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+<% end %>
+ </div>

@@ -10,10 +10,13 @@
                 $("#long_field").val(pos.coords.longitude);
             }
     );
+
+
+
 </script>
 
-<div id="plain-wrapper">
-  <div class="well">
+
+
 <%= form_for(@complaint) do |f| %>
   <% if @complaint.errors.any? %>
     <div id="error_explanation">
@@ -28,7 +31,7 @@
   <% end %>
 
 
-
+    <%= f.collection_select :admin_id, Admin.all, :id, :branch %>
     <%= f.label :branch %><br />
     <%= f.text_field :branch %>
 
@@ -41,19 +44,21 @@
     <%= f.number_field :seat %>
 
 
-    <%= f.label :comment %><br />
-    <%= f.text_field :comment %>
+
+    <%= f.hidden_field :comment, value: current_user.email  %>
 
     <div class="actions">
       <%= f.submit "Send", :class => "btn btn-warning" %>
     </div>
-   </div>
-   </div>
+
+
 
     <%= f.hidden_field :longitude, :id => 'long_field'  %>
 
 
     <%= f.hidden_field :latitude, :id => 'lat_field' %>
+
+
 
 
 

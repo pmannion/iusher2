@@ -1,3 +1,6 @@
+<!--use this link to return to the current users profile path-->
+<!-- <  link_to "Back to Profile", profile_path(current_user.profile_name) %> -->
+
 <!DOCTYPE html>
 <html>
 <head>
@@ -13,29 +16,29 @@
 <% end %>
 
 <%= render 'layouts/header' %>
- <% if signed_in? %>
-
-<% else %>
-        <% if @user %>
-<%=  form_for(:session, url:sessions_path) do |f| %>
-    <div id="login1">
-      <%= f.label :email %><%= f.text_field :email %>
-     </div>
-     <div id="login2">
-      <%= f.label :password %><%= f.password_field :password %><%= f.submit "Log in" %>
-     </div>
 
 
 
-      <% end %>
-   <% end %>
-  <% end %>
-
-
-
-
+  <div id="cinemas">
+    <p>Where can you<br/>
+      use iUsher?
+    </p>
+      <%=  image_tag('vue.jpg') %>
+    <br/>
+    <br/>
+      <%=  image_tag('odeon.jpg') %>
+    <br/>
+    <br/>
+      <%=  image_tag('cineworld.jpg') %>
+    <br/>
+    <br/>
+      <%=  image_tag('omniplex.jpg') %>
+  </div>
 
 <%= yield %>
+
+<%= render 'layouts/footer' %>
+   <div class="clear"></div>
 
 </body>
 </html>

@@ -1,0 +1,24 @@
+// Place all the styles related to the Profiles controller here.
+// They will automatically be included in application.css.scss.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+a:link {
+  color: gray;
+}
+
+#post{
+  position: absolute;
+
+  right: 190px;
+  height: 400px;
+  width: 720px;
+  overflow: auto;
+
+}
+
+#post-seperate{
+  width: 350px;
+  border-bottom: 2px solid #808080;
+  margin:40px 300px 20px 350px;
+}
+

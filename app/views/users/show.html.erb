@@ -1,99 +1,95 @@
 <div id="plain-wrapper">
-<% if signed_in? && @user.trust_level == "trusted" %>
+  <% if signed_in? && @user.trust_level == "trusted" %>
 
- <div id="pic-border-green">
+      <div id="pic-border-green">
 
-   <div id="pic-green">
-      <% if @user.avatar? %>
-      <%= image_tag @user.avatar.url %>
-     <% end %>
-     <%=  link_to "add photo", edit_user_path(@user) %>
-   </div>
-   </div>
-
-
-
-   <div id="personal-info">
-
-     <h3><%= @user.full_name %></h3>
-     Update details: <%= link_to 'edit', edit_user_path, id:"edit" %><br/>
-     Profile Name:  <%= @user.profile_name %><br/>
-     Member Since:  <%= @user.created_at.strftime("%d %b. %Y") %><br/>
-     Member Type:  <%= @user.user_type %> user<br/>
-     Member Status:  <%= @user.trust_level %><br/>
-     Number of posts:  <%= @user.posts.count %><br/>
-
-
-    </div>
-
-   <% @user_friendships.each do |friend| %>
-
-    <div id="connect">
-      <% if friend.accepted? && !current_user %>
-      <%= link_to " Remove Buddy ", new_user_friendship_path(friend_id: @user) , class: "btn btn-danger", method: :delete %>
-         <% else %>
-              <%= link_to "Add Buddy ", new_user_friendship_path(friend_id: @user) , class: "btn btn-info" %>
-        <% end %>
-      <% end %>
-
-    </div>
-  <% end %>
-    <hr />
-    <div id="userposts">
-      <%= link_to 'New Post', new_post_path, class: "btn btn-success" %>
-      <%= link_to 'Make a complaint', new_complaint_path, class: "btn btn-success" %>
-    </div>
-
-    <div id="talking">
-      <p><b>Comments</b></p>
-    </div>
-
-    <div id="friend-list">
-      <p><b>Friends</b></p>
-
-    </div>
-
-    <div id="friends">
-
-    </div>
+        <div id="pic-green">
+          <% if @user.avatar? %>
+              <%= image_tag @user.avatar.url %>
+          <% end %>
+          <%=  link_to "add photo", edit_user_path(@user) %>
+        </div>
+      </div>
 
 
 
-    <% @post.each do |post| %>
-        <div id="post-seperate">
+      <div id="personal-info">
 
-          <div class="status">
-            <div class="row">
-              <div class="span7">
-                <%= gravatar_for @user%>
-                <%= post.content %>
-                <div class="meta">
-                  <%= link_to time_ago_in_words(post.created_at) + " " + "ago", post %>
-                  <span class="admin">
+        <h3><%= @user.full_name %></h3>
+        Update details: <%= link_to 'edit', edit_user_path, id:"edit" %><br/>
+        Profile Name:  <%= @user.profile_name %><br/>
+        Member Since:  <%= @user.created_at.strftime("%d %b. %Y") %><br/>
+        Member Type:  <%= @user.user_type %> user<br/>
+        Member Status:  <%= @user.trust_level %><br/>
+        Number of posts:  <%= @user.posts.count %><br/>
+
+
+      </div>
+
+
+      <div id="connect">
+        <%= link_to "Add Buddy ", new_user_friendship_path(friend_id: @user) , class: "btn btn-info" %>
+      </div>
+
+
+      <hr />
+      <div id="userposts">
+        <%= link_to 'New Post', new_post_path, class: "btn btn-success" %>
+        <%= link_to 'Make a complaint', new_complaint_path, class: "btn btn-success" %>
+      </div>
+
+      <div id="talking">
+        <p><b>Comments</b></p>
+      </div>
+
+      <div id="friend-list">
+        <p><b>Friends</b></p>
+
+      </div>
+
+      <div id="friends">
+
+      </div>
+
+
+
+      <% @post.each do |post| %>
+          <div id="post-seperate">
+
+            <div class="status">
+              <div class="row">
+                <div class="span7">
+                  <%= gravatar_for @user%>
+                  <%= post.content %>
+                  <div class="meta">
+                    <%= link_to time_ago_in_words(post.created_at) + " " + "ago", post %>
+                    <span class="admin">
                     <%= link_to 'Edit', edit_post_path(post) %>
-                    <%= link_to 'Destroy', post, method: :delete, data: { confirm: 'Are you sure?' } %>
+                      <%= link_to 'Destroy', post, method: :delete, data: { confirm: 'Are you sure?' } %>
                   </span>
+                  </div>
                 </div>
               </div>
             </div>
           </div>
-        </div>
-    <% end %>
+      <% end %>
 
 
 
 
-    <% if signed_in? && @user.trust_level != "trusted" %>
-        <div id="pic-border">
-          <div id="pic-red">
-            <%= gravatar_for @user %>
+      <% if signed_in? && @user.trust_level != "trusted" %>
+          <div id="pic-border">
+            <div id="pic-red">
+              <%= gravatar_for @user %>
+            </div>
           </div>
-        </div>
-        <h1><%= @user.full_name %></h1>
+          <h1><%= @user.full_name %></h1>
 
-        <hr />
-       <% else %>
+          <hr />
+      <% else %>
 
-<% end %>
+      <% end %>
 
- </div>
+      </div>
+
+  <% end %>

@@ -1,20 +1,25 @@
 // Place all the styles related to the Users controller here.
-// They will automatically be included in application.css.
+// They will automatically be included in application.css.scss.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
+#friend-container {
+  position: relative;
+  width: 260px;
+  height:300px;
+  margin-left: 760px;
+  border: 3px solid silver;
+  border-radius: 5px;
+  float:left;
 
 
+}
 
-#main_wrapper {
-  position:absolute;
-  width:1100px;
-  height:700px;
-  margin-top: 0px;
-  margin-left: 30px;
-  background-image: url("bluebg1.jpg");
-  background-repeat:no-repeat;
-  -webkit-border-radius: 10px;
-  z-index: 10000;
+#allfriends{
+  position: relative;
+  top: 10px;
+  left:10px;
+  z-index: 10;
+
 
 }
 
@@ -22,26 +27,6 @@ p {
   font-family:"calibri";
   font-weight:bold;
 }
-
-#plain_wrapper {
-  width:1100px;
-  height:800px;
-  margin-top: 0px;
-  margin-left: 60px;
-  z-index: 20000;
-
-}
-
-#cinemas{
-  position:relative;
-  top: 150px;
-  right: 0px;
-  bottom: 200px;
-  left: 1120px;
-  padding-bottom:5px;
-
-}
-
 
 
 #form-container {
@@ -59,8 +44,6 @@ p {
 
 #nav li {
   display: inline;
-
-
 }
 
 #nav li a {
@@ -88,10 +71,15 @@ h2 {
 
 }
 
+h3 {
+  color: cadetblue;
+  top: 10px;
+}
+
 
 
 #pic-border-green {
-
+  position: absolute;
   height:90px;
   width:90px;
   background-color: #ff0000;
@@ -102,7 +90,7 @@ h2 {
 
 #pic-border-green {
   position: absolute;
-  top:90px;
+  top:10px;
   height:90px;
   width:90px;
   background-color: #5eb95e;
@@ -115,14 +103,14 @@ h2 {
   background-repeat: repeat-x;
   filter: progid:dximagetransform.microsoft.gradient(startColorstr='#62c462', endColorstr='#57a957', GradientType=0);
   -webkit-border-radius: 4px;
-  margin-top:30px;
-  margin-left:0px;
+  margin-top:10px;
+  margin-left:12px;
 }
 
 #pic-green {
-position:absolute;
-top:1px;
-margin:5px;
+  position:absolute;
+  top:1px;
+  margin:5px;
 
 }
 
@@ -135,10 +123,9 @@ margin:5px;
 
 #personal-info {
   position:absolute;
-  top:115px;
+  top:15px;
   right:365px;
-
-  left:180px;
+  left:140px;
   font-family:arial;
   font-size: 0.75em;
   font-weight: lighter;
@@ -147,9 +134,9 @@ margin:5px;
 
 hr {
   position:relative ;
-  top:5px;
+  top:150px;
+  right: 18px;
   left: 0px;
-
 }
 
 .left-60 {
@@ -159,14 +146,15 @@ hr {
 
 #userposts {
   position:absolute;
-  top:310px;
-  left:60px;
+  top:200px;
+  left:10px;
 
 }
 
 #post-seperate{
-  border-bottom: 1px solid #808080;
-  margin:10px 380px 20px 270px;
+
+  border-bottom: 1px solid cadetblue;
+  margin:10px 360px 20px 305px;
 
 }
 
@@ -174,7 +162,8 @@ hr {
   color: darkblue;
 }
 #talking {
-  margin: 37px 380px 20px 270px;
+  position: relative;
+  margin: 180px 400px 20px 300px;
   padding-top:5px;
   padding-left:10px;
   border: 1px solid #d3d3d3;
@@ -186,7 +175,7 @@ hr {
 #friend-list {
   position: absolute;
   width:270px;
-  margin:-55px 0px 20px 750px;
+  margin: -55px 0px 20px 750px;
   padding-top:5px;
   padding-left:10px;
   border: 1px solid #d3d3d3;
@@ -195,20 +184,20 @@ hr {
   color: #2f4f4f;
 }
 
-a:visited {
-  color: white;
-}
+//
+
+
 
 #connect {
-  position:relative;
-  margin: 90px 650px 5px 5px;
+  position:absolute;
+  margin: 120px 620px 5px 10px;
   color: white;
 }
 
 @-webkit-keyframes greenPulse {
-from { background-color: #749a02; -webkit-box-shadow: 0 0 9px #333; }
-50% { background-color: #91bd09; -webkit-box-shadow: 0 0 18px #91bd09; }
-to { background-color: #749a02; -webkit-box-shadow: 0 0 9px #333; }
+  from { background-color: #749a02; -webkit-box-shadow: 0 0 9px #333; }
+  50% { background-color: #91bd09; -webkit-box-shadow: 0 0 18px #91bd09; }
+  to { background-color: #749a02; -webkit-box-shadow: 0 0 9px #333; }
 }
 .green.button {
   -webkit-animation-name: greenPulse;
@@ -232,15 +221,14 @@ to { background-color: #749a02; -webkit-box-shadow: 0 0 9px #333; }
   position: relative;
   left: 270px;
   color: darkblue;
-
- a:link{
-   color: gray;
- }
-
- a:visited {
-   color: gray;
- }
 }
+  a:link, a:visited {
+    color: white;
+  }
+
+
+
+
 
 
 

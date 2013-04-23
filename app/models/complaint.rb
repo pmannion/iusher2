@@ -4,35 +4,21 @@ class Complaint < ActiveRecord::Base
   validates :screen, presence: true
   validates :seat, presence: true
 
-
-
   belongs_to :user
   belongs_to :admin
 
-
-  def user_longitude
-    longitude
-  end
-
-  def user_latitude
-    latitude
-  end
-
-  #createing a admin_user model with branch name, address, longitude and latitude  may change this !
-  def branch_longitude
-    -6.315654299999999
-  end
-
-  def branch_latitude
-    53.2983071
-  end
-
-  #No margin for error in co-ordinates, need to allow a minor difference e.g.(0.20)
   def trust_level
-    if branch_latitude == user_latitude && user_longitude == branch_longitude
-      'High'
+    if admin.nil?
+      return 'high'
+    end
+    tolerance_long = 0.20
+    tolerance_lat = 0.20
+
+    if self.longitude >= admin.longitude - tolerance_long && self.longitude <= admin.longitude + tolerance_long &&
+        self.latitude >= admin.latitude - tolerance_lat && self.latitude <= admin.latitude + tolerance_lat
+      'high'
     else
-      'Low'
+      'low'
     end
   end
 end

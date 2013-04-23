@@ -1,5 +1,5 @@
 class UserNotifier < ActionMailer::Base
-  default from: "from@example.com"
+  default from: "iusher.response@gmail.com"
 
   def friend_requested(user_friendship_id)
     user_friendship = UserFriendship.find(user_friendship_id)
@@ -22,4 +22,8 @@ class UserNotifier < ActionMailer::Base
          subject: "#{@friend.first_name} is now an iUsher contact"
 
   end
+
+
 end
+
+

@@ -49,5 +49,7 @@ class UserFriendship < ActiveRecord::Base
   def delete_mutual_friendship!
      mutual_friendship.delete
   end
+
+
 end
 

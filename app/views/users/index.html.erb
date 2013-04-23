@@ -1,32 +1,29 @@
-   <div id="plain-wrapper">
+<div id="plain-wrapper">
+  <div id="search">
     <h4>Find a Buddy !</h4>
-      <%= text_field_tag :user %><%= link_to 'Search',  users_path, class: 'btn btn-info' %>
-      <% @user.each do |user| %>
-          <div id="post-seperate">
+      <%= form_tag users_path, :method => 'get', id:'users_search' do %>
+        <%= text_field_tag :search_query,
+                           params[:search_query] %>
+        <%= submit_tag 'Search', :name => nil , class: 'btn btn-info' %>
+    </div>
 
-            <div class="status">
-              <div class="row">
-                <div class="span7">
-
-                  <b><%= user.first_name %></b>
-                  <b><%= user.last_name %></b>
-                  <div class="meta">
-
-                      <%= link_to 'Go to Buddy', user_path(user) , class: "btn btn-info" %>
-
-                    <span class="admin">
-
-
-
-       </span>
-                  </div>
-                </div>
+  <% @user.each do |user| %>
+      <div id="users-index">
+        <div class="status">
+          <div class="row">
+            <div class="span7">
+              <b><%= user.first_name %></b>
+              <b><%= user.last_name %></b>
+               <div class="meta">
+                <%= link_to 'Go to Buddy', profile_path(user.profile_name) , class: "btn btn-info" %>
               </div>
             </div>
           </div>
-      <% end %>
-       <div id="paginate">
-         <%= will_paginate @user %>
-       </div>
-     </div>
+        </div>
+      </div>
+   <% end %>
 
+
+  </div>
+
+<% end %>

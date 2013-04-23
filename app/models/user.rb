@@ -1,7 +1,9 @@
 class User < ActiveRecord::Base
   attr_accessible :email, :first_name, :last_name, :password, :profile_name, :trust_level, :user_type, :avatar
-  has_many :posts
 
+  belongs_to :admin
+
+  has_many :posts
   has_many :complaints
   has_attached_file :avatar, :styles => { :medium => "300x300>", :thumb => "100x100>" }, :default_url => "/images/:style/missing.png"
   has_many :user_friendships
@@ -14,6 +16,7 @@ class User < ActiveRecord::Base
   has_many :pending_friends, through: :pending_user_friendships, source: :friend
 
   has_secure_password
+
 
   before_save { |user| user.email = email.downcase }
   before_save :create_remember_token
@@ -30,6 +33,14 @@ class User < ActiveRecord::Base
   def full_name
     first_name + " " + last_name
   end
+
+  def self.search(search_query)
+  if search_query
+    find.all(conditions: ['first_name: like?', "%#{search_query}%"])
+  else
+    find.all
+  end
+end
 
 
 

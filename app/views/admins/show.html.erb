@@ -1,30 +1,64 @@
 
 <div id="plain-wrapper">
+   <div id="pic-border-green">
 
-
-
-
-
-      <div id="pic-border-green">
-
-        <div id="pic-green">
-
-
-
+     <div id="pic-green">
 
         </div>
       </div>
 
-
-
-
-
-      <div id="personal-info">
-
+<div id="personal-info">
+  <h3><%= @admins.title %></h3>
   Company: <%= @admins.company %><br/>
   Branch:  <%= @admins.branch %><br/>
+  User Type: <%= @admins.user_type %><br/>
   Member Since:  <%= @admins.created_at.strftime("%d %b. %Y") %><br/>
-
 </div>
   <hr />
- </div>
+
+  <div id="connectad">
+    <%= link_to image_tag("thumbup1.png"), vote_admin_path(@admins, type: "up"), method: "post"%>
+    <p id="like">Like</p>
+
+  </div>
+
+
+
+  <div id="userposts">
+    <%= link_to 'New Post', new_post_path, class: "btn btn-success" %>
+    <%= link_to 'View Complaints', complaints_path, class: "btn btn-success" %>
+  </div>
+
+  <div id="like-list">
+    <p><b>Likes</b></p>
+  </div>
+
+
+
+  <div id="talking">
+    <p><b>Comments</b></p>
+  </div>
+  <div id="adminpost">
+  <% @adminpost.each do |post| %>
+      <div id="post-seperate">
+        <div class="status">
+          <div class="row">
+            <div class="span7">
+              <%= post.content %>
+              <div class="meta">
+                <%= link_to time_ago_in_words(post.created_at) + " " + "ago", post %>
+                <span class="admin">
+                    <%= link_to 'Edit', edit_post_path(post) %>
+                  <%= link_to 'Destroy', post, method: :delete, data: { confirm: 'Are you sure?' } %>
+                  </span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+
+  <% end %>
+    </div>
+</div>
+

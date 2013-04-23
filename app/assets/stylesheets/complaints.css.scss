@@ -1,4 +1,61 @@
 // Place all the styles related to the Complaints controller here.
-// They will automatically be included in application.css.
+// They will automatically be included in application.css.scss.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+
+// Place all the styles related to the Complaints controller here.
+// They will automatically be included in application.css.scss.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+
+#complaint-form{
+  margin-top: 60px;
+  margin-left: 60px;
+}
+
+#complaint-index {
+  margin-top:50px;
+  margin-left:20px;
+
+}
+
+#report {
+  margin-top:40px;
+  margin-left:60px;
+}
+
+#complaint-list {
+  position: relative;
+  margin: 10px 200px 100px 20px;
+
+}
+
+h1 {
+  color: cadetblue;
+  margin-top:20px;
+  margin-left:20px;
+}
+
+.list_line_even {
+  background: #d3d3d3;
+
+}
+.list_line_odd {
+  background: ghostwhite;
+
+}
+
+table {
+  right:50px;
+  border-collapse: collapse;
+
+}
+table tr td {
+  padding: 10px;
+  vertical-align: top;
+}
+
+a:link{
+  color:#2f4f4f;
+}
 

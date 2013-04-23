@@ -7,6 +7,9 @@ gem 'factory_girl_rails', '4.1.0'
 gem 'state_machine'
 gem "paperclip", "~> 3.0"
 gem 'will_paginate', '~> 3.0'
+gem 'masonry-rails'
+gem 'js-routes'
+gem 'activerecord-reputation-system', require: 'reputation_system'
 
 group :development, :test do
   gem 'sqlite3', '1.3.5'

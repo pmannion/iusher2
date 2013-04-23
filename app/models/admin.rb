@@ -8,6 +8,10 @@ class Admin < ActiveRecord::Base
   has_secure_password
   has_many :posts
   has_many :complaints
+  has_and_belongs_to_many :users
+  has_reputation :votes, source: :user, aggregated_by: :sum
+
+
 
 
   validates :branch, presence: true
@@ -18,6 +22,15 @@ class Admin < ActiveRecord::Base
   VALID_EMAIL_REGEX = /\A[\w+\-.]+@[a-z\d\-.]+\.[a-z]+\z/i
   validates :email, presence: true, format: { with:VALID_EMAIL_REGEX },
             uniqueness: {case_sensitive: false}
+
+
+  def user_type
+    "Cinema group"
+  end
+
+  def title
+    company + " - " +branch
+  end
 
   private
 

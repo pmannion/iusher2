@@ -1,0 +1,355 @@
+/*
+ * This is a manifest file that'll be compiled into application.css, which will include all the files
+ * listed below.
+ *
+ * Any CSS and SCSS file within this directory, lib/assets/stylesheets, vendor/assets/stylesheets,
+ * or vendor/assets/stylesheets of plugins, if any, can be referenced here using a relative path.
+ *
+ * You're free to add application-wide styles to this file and they'll appear at the top of the
+ * compiled file, but it's generally better to create a new file per style scope.
+ *
+ *= require_self
+ *= require_tree .
+ */
+
+
+
+html{
+
+    width:0px;
+    height:0px;
+    background-color: lightblue;
+    margin-left:120px;
+    z-index: -50;
+}
+
+
+#plain-wrapper {
+    width:1000px;
+    height:800px;
+    margin-top: 20px;
+    margin-left: 60px;
+    z-index: 10000;
+    border: 4px solid #808080;
+}
+
+#main_wrapper {
+    position:absolute;
+    width:1100px;
+    height:700px;
+    margin-top: 0px;
+    margin-left: 30px;
+    border: 2px solid #808080;
+    background-image: url("bluebg1.jpg");
+    background-repeat:no-repeat;
+    -webkit-border-radius: 10px;
+    z-index: 10000;
+}
+
+
+
+
+#nav {
+    position:absolute;
+    top:15px;
+    bottom:20px;
+    width:1025px;
+    height:60px;
+    margin-left: 60px;
+    text-shadow: 3px 3px 3px ghostwhite;
+}
+
+#users-index{
+    margin-top:10px;
+    margin-left: 220px;
+}
+
+#logo {
+    position:relative;
+    top:5px;
+    right:900px;
+    bottom:400px;
+    left:60px;
+
+
+}
+
+#login1 {
+    position:absolute;
+    margin:520px 0px 0px 550px;
+    display:inline;
+    z-index: 20005;
+    color:#000000;
+    font-size: 15px;
+}
+
+#login2 {
+    position:absolute;
+    margin:520px 0px 0px 800px;
+    display:inline;
+    z-index: 20005;
+    color:#000000;
+    font-size: 15px;
+
+}
+
+
+
+
+#nav li {
+    display: inline;
+}
+
+#nav li a {
+    font-size:5px;
+    text-decoration: none;
+    float:right;
+    padding: 10px;
+}
+
+#nav li a:hover {
+    margin-top:-2px;
+    padding-bottom:8px;
+}
+
+
+#intro {
+    position:absolute;
+    margin-left:20px;
+    color:white;
+    font-size:30px;
+    font-family:"calibri";
+}
+
+#subintro {
+    position:absolute;
+    margin-top:30px;
+    margin-left:180px;
+    color:white;
+    font-size:15px;
+    font-family:"calibri";
+}
+//posts scrollbar------------------------------
+
+
+
+//styles for info pages ----------------------------------
+#fact1 {
+    position:absolute;;
+    background-color: lightblue;
+    -webkit-border-radius:10px;
+    color:white;
+    font-size:1.5em;
+    font-family:"calibri";
+    padding:20px;
+    top: 20px;
+    right: 750px;
+    bottom: 490px;
+    left: 100px;
+}
+
+#fact2{
+    position:absolute;;
+    background-color: lightblue;
+    -webkit-border-radius:10px;
+    color:white;
+    font-size:1.5em;
+    font-family:"calibri";
+    padding:20px;
+    top: 170px;
+    right: 300px;
+    bottom: 390px;
+    left: 400px;
+
+}
+
+
+
+#cover{
+    position: absolute;
+    border: 2px solid gray;
+    background-color:greenyellow;
+    -webkit-border-radius: 10px;
+    top: 20px;
+    right: 750px;
+    bottom: 500px;
+    left: 100px;
+    z-index:50000;
+    cursor:pointer;
+
+}
+
+#cover2 {
+    position: absolute;
+    border: 2px solid gray;
+    background-color:greenyellow;
+    -webkit-border-radius: 10px;
+    top: 170px;
+    right: 300px;
+    bottom: 390px;
+    left: 400px;
+    z-index:50000;
+    cursor:pointer;
+}
+
+.covertext {
+    postion:absolute;
+    margin-top: 50px;
+    margin-left:10px;
+    z-index:50002;
+    color: white;
+    font-family: Arial;
+    font-size: 1.5em;
+    border-radius: 5px;
+
+}
+
+
+#fact1 {
+    position:absolute;;
+    background-color: lightblue;
+    -webkit-border-radius:10px;
+    color:white;
+    font-size:1.5em;
+    font-family:"calibri";
+    padding:20px;
+    top: 20px;
+    right: 750px;
+    bottom: 490px;
+    left: 100px;
+}
+
+#fact2{
+    position:absolute;;
+    background-color: lightblue;
+    -webkit-border-radius:10px;
+    color:white;
+    font-size:1.5em;
+    font-family:"calibri";
+    padding:20px;
+    top: 170px;
+    right: 300px;
+    bottom: 380px;
+    left: 400px;
+
+}
+
+#fact3 {
+    position:absolute;;
+    background-color: lightblue;
+    -webkit-border-radius:10px;
+    color:white;
+    font-size:1.5em;
+    font-family:"calibri";
+    padding:20px;
+    top: 350px;
+    right: 750px;
+    bottom: 140px;
+    left: 100px;
+}
+
+#cover3 {
+    position: absolute;
+    border: 2px solid gray;
+    background-color:greenyellow;
+    -webkit-border-radius: 10px;
+    top: 350px;
+    right: 750px;
+    bottom: 150px;
+    left: 100px;
+    z-index:50000;
+    cursor:pointer;
+}
+
+#fact4 {
+    position:absolute;;
+    background-color: lightblue;
+    -webkit-border-radius:10px;
+    color:white;
+    font-size:1.5em;
+    font-family:"calibri";
+    padding:20px;
+    top: 350px;
+    right: 50px;
+    bottom: 90px;
+    left: 480px;
+}
+
+#cover4 {
+    position: absolute;
+    border: 2px solid gray;
+    background-color:lightblue;
+    -webkit-border-radius: 10px;
+    top: 350px;
+    right: 50px;
+    bottom: 100px;
+    left: 480px;
+    z-index:50000;
+    cursor:pointer;
+}
+
+#search{
+    position: relative;
+    margin-top:30px;
+    margin-left: 780px;
+}
+#footer{
+    position:absolute;
+    margin-top: 710px;
+    margin-left:30px;
+    float:left;
+    color: white;
+
+}
+
+#copyright {
+    position:absolute;
+    margin-top: 710px;
+    margin-left:530px;
+    float:left;
+    color: white;
+
+}
+
+
+
+//styles for cinema logos ----------------------
+#cinemas{
+    position:absolute;
+    top: 120px;
+    right:0px;
+    bottom: 200px;
+    left: 1270px;
+    padding-bottom:5px;
+    z-index: 800000;
+
+}
+
+#cinema-text {
+    color: white;
+    font-size: 1.5em;
+}
+
+
+.clear {
+  clear: both;
+  height: 0;
+  overflow: hidden;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
