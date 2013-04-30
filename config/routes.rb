@@ -1,11 +1,13 @@
 Usher3::Application.routes.draw do
 
-    resources :admins do
-      member { post :vote}
-    end
+    resources :admins
+
     resources :users, only:[:index, :create, :new, :edit, :destroy, :update]
     resources :complaints
-    resources :posts
+    resources :posts do
+      member { post :vote}
+    end
+
     resources :profiles
 
   resources :user_friendships do
@@ -24,6 +26,8 @@ Usher3::Application.routes.draw do
   match '/signout', to: 'sessions#destroy', via: :delete
 
   get '/:id', to: 'profiles#show', as: 'profile'
+
+
 
 
   resources :admin_sessions, only:[:new, :create, :destroy]

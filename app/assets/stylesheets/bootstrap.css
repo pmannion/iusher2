@@ -4029,6 +4029,8 @@ input[type="submit"].btn.btn-mini {
 .pagination {
     height: 36px;
     margin: 18px 0;
+
+
 }
 
 .pagination ul {
@@ -4043,11 +4045,13 @@ input[type="submit"].btn.btn-mini {
     -webkit-box-shadow: 0 1px 2px rgba(0, 0, 0, 0.05);
     -moz-box-shadow: 0 1px 2px rgba(0, 0, 0, 0.05);
     box-shadow: 0 1px 2px rgba(0, 0, 0, 0.05);
+
 }
 
 .pagination li {
     display: inline;
     color:darkblue;
+
 }
 
 .pagination a {
@@ -4057,11 +4061,12 @@ input[type="submit"].btn.btn-mini {
     text-decoration: none;
     border: 1px solid cadetblue;
     border-left-width: 0;
+    background-color:lightblue;
 }
 
 .pagination a:hover,
 .pagination .active a {
-    background-color: lightblue;
+    background-color: cadetblue;
 }
 
 .pagination .active a {

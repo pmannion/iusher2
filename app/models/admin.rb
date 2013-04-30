@@ -9,7 +9,7 @@ class Admin < ActiveRecord::Base
   has_many :posts
   has_many :complaints
   has_and_belongs_to_many :users
-  has_reputation :votes, source: :user, aggregated_by: :sum
+
 
 
 

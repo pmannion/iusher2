@@ -4,7 +4,11 @@ class PostsController < ApplicationController
 
   respond_to :html, :json
   def index
-    @post = Post.all
+    @post = Post.paginate(per_page: 6,
+                          page: params[:per_page],
+                          order: 'created_at DESC')
+
+
 
 
     respond_to do |format|
@@ -96,4 +100,19 @@ end
       format.json { head :no_content }
     end
   end
+
+  #--------gem activerecord_reputation_system installed tutorial rails casts 406-----------#
+  def vote
+    value = params[:type] == "up" ? 1 : -1
+    @post = Post.find(params[:id])
+    @post.add_or_update_evaluation(:votes, value, current_user)
+    redirect_to :back
+    flash[:success] = "Thanks for voting"
+
+  end
 end
+
+
+
+
+

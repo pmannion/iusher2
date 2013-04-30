@@ -13,7 +13,7 @@
        Member Since:  <%= @user.created_at.strftime("%d %b. %Y") %><br/>
        Member Type:  <%= @user.user_type %> user<br/>
        Member Status:  <%= @user.trust_level %><br/>
-       Number of Posts: <%= @user.posts.count %><br/>
+       Reputation: <%= current_user.reputation_for(:votes).to_i %><br/>
        <% if profile_path(@current_user.profile_name) == profile_path %>
         Edit Profile: <%= link_to 'Edit', edit_user_path %>
        <% else %>
@@ -71,7 +71,7 @@
         <div id="post">
           <div id='articles'>
             <div class='page'>
-               <%= render 'profiles/post' %>
+               <%= render 'posts/post' %>
              </div>
            </div>
         </div>

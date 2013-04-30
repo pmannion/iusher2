@@ -1,11 +1,13 @@
 class Complaint < ActiveRecord::Base
-  attr_accessible :branch, :comment, :latitude, :longitude, :screen, :seat
+  attr_accessible :branch, :comment, :latitude, :longitude, :screen, :seat, :admin_id, :status
   validates :branch, presence: true
   validates :screen, presence: true
   validates :seat, presence: true
 
   belongs_to :user
   belongs_to :admin
+
+  STATUS_TYPES = ["confirmed", "pending"]
 
   def trust_level
     if admin.nil?

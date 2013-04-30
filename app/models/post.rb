@@ -4,5 +4,7 @@ class Post < ActiveRecord::Base
   belongs_to :user
   belongs_to :admin
 
+  has_reputation :votes, source: :user, aggregated_by: :sum
+
   validates :content, presence: true, length: {maximum:300}
 end

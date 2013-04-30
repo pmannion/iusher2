@@ -14,6 +14,7 @@ class User < ActiveRecord::Base
            foreign_key: :user_id,
            conditions: { state: 'pending' }
   has_many :pending_friends, through: :pending_user_friendships, source: :friend
+  has_reputation :votes, source: {reputation: :votes, of: :posts}, aggregated_by: :sum
 
   has_secure_password
 

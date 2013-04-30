@@ -11,8 +11,8 @@
     <th>Longitude</th>
     <th>Latitude</th>
     <th>Trust Level</th>
-    <th></th>
-    <th></th>
+    <th>status</th>
+    <th>Controls</th>
   </tr>
 
 
@@ -24,7 +24,17 @@
     <td><%= complaint.seat %></td>
     <td><%= complaint.longitude %></td>
     <td><%= complaint.latitude %></td>
-    <td><%= complaint.trust_level %></td>
+    <% if complaint.trust_level == "high" %>
+      <td id="green-status"><%= complaint.trust_level %></td>
+    <% else %>
+      <td id="red-status"><%= complaint.trust_level %></td>
+    <% end %>
+    <% if complaint.status == "pending" %>
+    <td id="orange-status"><%= complaint.status %></td>
+    <% else %>
+    <td id="green-status"><%= complaint.status %></td>
+    <% end %>
+
     <td><%= link_to 'Show', complaint %></td>
     <td><%= link_to 'Edit', edit_complaint_path(complaint) %></td>
     <td><%= link_to 'Destroy', complaint, method: :delete, data: { confirm: 'Are you sure?' } %></td>
@@ -32,10 +42,12 @@
 <% end %>
 
 </table>
+
   <div id="paginate">
     <%= will_paginate @complaints %>
   </div>
 </center>
+
 <br />
 
 <%= link_to 'New Complaint', new_complaint_path %>
@@ -46,3 +58,4 @@
   <% end %>
 
 </div>
+

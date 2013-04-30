@@ -73,7 +73,8 @@ end
 
     respond_to do |format|
       if @complaint.update_attributes(params[:complaint])
-        format.html { redirect_to @complaint, notice: 'Complaint was successfully updated.' }
+        format.html { redirect_to complaints_path}
+        flash[:success] = 'Complaint was successfully updated.'
         format.json { head :no_content }
       else
         format.html { render action: "edit" }
@@ -81,6 +82,7 @@ end
       end
     end
   end
+
 
   # DELETE /complaints/1
   # DELETE /complaints/1.json
@@ -93,4 +95,7 @@ end
       format.json { head :no_content }
     end
   end
+
+
+
 end

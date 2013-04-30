@@ -1,6 +1,14 @@
+<div id="plain-wrapper">
 <h1>Editing complaint</h1>
 
-<%= render 'form' %>
+
+  <%= form_for(@complaint) do |f| %>
+    <%= f.label :status %><br />
+    <%= f.select :status, Complaint::STATUS_TYPES, prompt: "select a status" %>
+    <%= f.submit 'update complaint', class: 'btn btn-warning'%>
+  <% end %>
+
 
 <%= link_to 'Show', @complaint %> |
 <%= link_to 'Back', complaints_path %>
+</div>

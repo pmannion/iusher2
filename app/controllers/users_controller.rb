@@ -2,9 +2,9 @@ class UsersController < ApplicationController
 
   def index
 
-    @user = User.all#paginate(per_page: 7,
-                    #  :page => params[:page],
-                    #:order => 'created_at DESC').search(params[:search_query])
+    @user = User.paginate(per_page: 7,
+                     :page => params[:page],
+                    :order => 'created_at DESC').search(params[:search_query])
     @user_friendships = current_user.user_friendships.all
 
   end
