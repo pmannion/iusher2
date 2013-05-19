@@ -18,7 +18,7 @@ class AdminSessionsController < ApplicationController
   end
 
   def destroy
-    admin_out
+    sign_out
     flash[:success] = 'You have signed out'
     redirect_to root_path
   end

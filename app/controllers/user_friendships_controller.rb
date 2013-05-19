@@ -3,7 +3,10 @@ class UserFriendshipsController < ApplicationController
   respond_to :html, :json
 
   def index
-    @user_friendships = current_user.user_friendships.all
+    @user_friendships = current_user.user_friendships.paginate(per_page:5,
+                                                               page: params[:page],
+                                                               order: 'created_at DESC')
+
 
   end
 

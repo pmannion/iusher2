@@ -9,14 +9,35 @@
 
 
 #complaint-form{
+  position:relative;
   margin-top: 60px;
   margin-left: 60px;
+  height:420px;
 }
 
 #complaint-index {
   margin-top:50px;
   margin-left:20px;
 
+}
+
+#show-complaint{
+  font-size:3em;
+  color:white;
+  height:60%;
+  width:20%;
+  margin-top:5%;
+  margin-left:15%;
+  background-color: #808080;
+  padding:2%;
+
+}
+
+#edit-complaint{
+  margin-top:5%;
+  margin-left:15%;
+  width:30%;
+  height:60%;
 }
 
 #report {
@@ -26,7 +47,7 @@
 
 #complaint-list {
   position: relative;
-  margin: 10px 200px 100px 20px;
+  margin: 10px 200px 100px 60px;
 
 }
 
@@ -50,9 +71,10 @@ table {
   border-collapse: collapse;
 
 }
-table tr td {
-  padding: 10px;
+table tr td  {
+  padding: 10px 20px 10px 25px;
   vertical-align: top;
+
 }
 
 a:link{
@@ -69,4 +91,8 @@ a:link{
 
 #red-status{
   color:#ff0000;
+}
+
+#bluestatus{
+  color:darkblue;
 }

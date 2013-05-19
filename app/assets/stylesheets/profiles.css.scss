@@ -2,23 +2,140 @@
 // They will automatically be included in application.css.scss.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
-a:link {
-  color: gray;
+
+
+
+#profile-info{
+height:200px;
+width:800px;
+border-top:7px solid gray;
+border-left: 6px solid #2f4f4f;
+border-right: 6px solid #2f4f4f;
+
+ margin-left:20%;
+ margin-top:5%;
+background-image:url("dark-texture.jpg")
+
+}
+
+#profile-bar{
+  position:absolute;
+  height:50px;
+  width:850px;
+  margin-left:18%;
+  margin-top:1.5%;
+
+
+}
+
+li{
+  list-style-type: none;
+  display:inline;
+}
+
+
+#pic-border-green {
+  position: absolute;
+  height:90px;
+  width:90px;
+
+}
+
+#pic-border-green {
+  position: absolute;
+  margin-top:1%;
+  margin-left:3%;
+
+
+}
+
+#pic-green {
+  position:absolute;
+  margin:5px;
+
+}
+
+
+#pic-red {
+  position:absolute;
+  margin:5px;
+
 }
 
 #post{
-  position: absolute;
-
-  right: 190px;
-  height: 400px;
-  width: 720px;
-  overflow: auto;
+ margin-top:12%;
+ margin-left:41%;
+ width:350px;
 
 }
 
 #post-seperate{
-  width: 350px;
+  margin-left:41%;
+  width:350px;
   border-bottom: 2px solid #808080;
-  margin:40px 300px 20px 350px;
 }
+
+
+#allfriends{
+  position:relative;
+  margin-top: 15px;
+  margin-left:5%;
+  left:10px;
+  float: left;
+  z-index: 10;
+  text-align: center;
+
+
+}
+
+#friend-container{
+  position: absolute;
+  top:500px;
+  margin-left:20%;
+  width: 350px;
+  height:300px;
+  border-top: 8px solid dodgerblue;
+  border-right: 6px solid dodgerblue;
+  border-bottom: 8px solid dodgerblue;
+  border-left: 6px solid  dodgerblue;
+  background-color: cadetblue;
+
+}
+#reputation{
+  position:absolute;
+  color:white;
+  font-weight: bold;
+  font-size: 1.3em;
+  font-family: calibri;
+  margin-left:28%;
+  margin-top:1.5%;
+}
+
+#post-count{
+position:absolute;
+margin-left:38%;
+margin-top:1.5%;
+color:white;
+font-weight: bold;
+font-size: 1.3em;
+font-family: calibri;
+}
+
+ #buddy-size{
+   position:absolute;
+   margin-left:50%;
+   color:white;
+   font-weight: bold;
+   font-size: 1.3em;
+   font-family: calibri;
+   margin-top:1.5%;
+
+}
+
+#thumbs{
+  position:realtive;
+
+}
+
+
 

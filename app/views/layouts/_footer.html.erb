@@ -3,7 +3,10 @@
    | <%= link_to 'Register', root_path  %>
    | <%= link_to ' About', about_path  %>
    | <%= link_to 'Contact Us', contact_path  %>
-   | <%= link_to 'Cinema login', adminsonly_path  %> |
+   | <%= link_to 'Register Cinema', 'admins/new'  %>
+   | <%= link_to 'Cinema login', 'admin_sessions/new'  %>
+   | <%= link_to "Log out",signout_path, method: 'delete' %>
 
-</div>
+
 <p id="copyright">Copyright Paul Mannion 2013</p>
+</div>

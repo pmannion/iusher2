@@ -1,10 +1,46 @@
-<div id="plain-wrapper">
-  <div class="well">
+
+
 <h1>Edit Details</h1>
+<div id="edit-complaint">
 
-<%= render 'form' %>
+  <%= form_for (@user), :html => { :multipart => true } do |f| %>
+      <% if @user.errors.any? %>
+          <div id="error_explanation">
+            <h3><%= pluralize(@user.errors.count, "error") %> prohibited this post from being saved:</h3>
+
+            <ul>
+              <% @user.errors.full_messages.each do |msg| %>
+                  <li><%= msg %></li>
+              <% end %>
+            </ul>
+          </div>
+      <% end %>
+      <p>Upload Avatar</p>
+      <hr/>
+      <%= f.file_field :pic, as: :file %>
+      <% if f.object.pic? %>
+         <%= image_tag f.object.pic.url %>
+      <% end %>
+
+      <%= f.label :first_name %><br/>
+      <%= f.text_field :first_name %> <br />
+
+      <%= f.label :last_name %><br />
+      <%= f.text_field :last_name %><br />
+
+      <%= f.label :profile_name %><br/>
+      <%= f.text_field :profile_name %><br />
+
+      <%= f.label :email %> <br/>
+      <%= f.text_field :email %><br />
+
+      <%= f.label :password %><br/>
+      <%= f.password_field :password %><br />
 
 
 
-    </div>
+
+      <%= f.submit %>
+      <%= link_to 'Back', profile_path(@user.profile_name) %>
+  <% end %>
 </div>

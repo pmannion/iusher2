@@ -53,14 +53,15 @@ end
   # POST /posts
   # POST /posts.json
   def create
-    @post = current_user.posts.new(params[:post])
+    @post = current_user.posts.build(params[:post])
     respond_to do |format|
   if @post.save
     format.html do
     flash[:success] = 'your post has been created'
     redirect_to profile_path(@current_user.profile_name)
-    end
+    format.js
     format.json { render json: @post.to_json}
+  end
   else
     format.html do
       render @user

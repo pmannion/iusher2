@@ -1,19 +1,15 @@
 class Admin < ActiveRecord::Base
   attr_accessible :company, :branch, :email, :latitude, :longitude, :password
-  #callbacks
+  #--------------------- callbacks-------------------#
   before_save { |admin| admin.email = email.downcase }
   before_save :create_remember_token
 
-
+  # ----------------- relationships  ----------------#
   has_secure_password
   has_many :posts
   has_many :complaints
   has_and_belongs_to_many :users
-
-
-
-
-
+  #---------------- validations ---------------------#
   validates :branch, presence: true
   validates :latitude, presence: true
   validates :longitude, presence: true
@@ -38,6 +34,4 @@ class Admin < ActiveRecord::Base
   def create_remember_token
     self.remember_token = SecureRandom.urlsafe_base64
   end
-
-
 end

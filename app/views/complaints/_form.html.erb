@@ -30,20 +30,17 @@
     </div>
   <% end %>
 
-
-    <%= f.collection_select :admin_id, Admin.all, :id, :branch %>
     <%= f.label :branch %><br />
-    <%= f.text_field :branch %>
+    <%= f.collection_select :admin_id, Admin.all, :id, :branch %>
 
+    <%= f.label :branch %><br />
+    <%= f.text_field :branch, value:'Please confirm branch name' %>
 
     <%= f.label :screen %><br />
     <%= f.number_field :screen %>
 
-
     <%= f.label :seat %><br />
     <%= f.number_field :seat %>
-
-
 
     <%= f.hidden_field :comment, value: current_user.email  %>
 
@@ -52,14 +49,11 @@
     </div>
 
 
-
+<!-- hidden values to collect users co-ordinates -->
     <%= f.hidden_field :longitude, :id => 'long_field'  %>
 
 
     <%= f.hidden_field :latitude, :id => 'lat_field' %>
-
-
-
-
+<!--                                                -->
 
 <% end %>

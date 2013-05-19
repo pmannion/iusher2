@@ -2,39 +2,32 @@
 // They will automatically be included in application.css.scss.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
-#friend-container {
-  position: relative;
-  width: 260px;
-  height:300px;
-  margin-left: 760px;
-  border: 3px solid silver;
-  border-radius: 5px;
-  float:left;
 
 
+#all-users{
+  position:relative;
+  margin-top:-60px;
+  left:-25px;
 }
 
-#allfriends{
-  position: relative;
-  top: 10px;
-  left:10px;
-  z-index: 10;
-
-
-}
 
 p {
   font-family:"calibri";
   font-weight:bold;
 }
 
+#center {
+  min-height:600px;
+  height:auto !important;
+  height:600px;
+}
+
 
 #form-container {
   position: absolute;
-  top: 50px;
-  right:100px;
-  bottom:50px;
-  left: 750px;
+  top: 18%;
+  bottom:0%;
+  left: 70%;
   font-family:helvetica;
   font-size: 15px;
   padding-top:35px;
@@ -52,7 +45,6 @@ p {
   font-family: "calibri";
   font-size:18px;
   text-decoration: none;
-  float:right;
   color: white;
 }
 
@@ -65,9 +57,9 @@ p {
 h2 {
   font-family: moiser;
   font-size: 30px;
-  color:white;
+  color:cadetblue;
   padding-top:30px;
-  margin-left:750px;
+  margin-left:1050px;
 
 }
 
@@ -78,48 +70,6 @@ h3 {
 
 
 
-#pic-border-green {
-  position: absolute;
-  height:90px;
-  width:90px;
-  background-color: #ff0000;
-  -webkit-border-radius: 4px;
-  margin-top:70px;
-  margin-left:60px;
-}
-
-#pic-border-green {
-  position: absolute;
-  top:10px;
-  height:90px;
-  width:90px;
-  background-color: #5eb95e;
-  background-image: -moz-linear-gradient(top, #62c462, #57a957);
-  background-image: -ms-linear-gradient(top, #62c462, #57a957);
-  background-image: -webkit-gradient(linear, 0 0, 0 100%, from(#62c462), to(#57a957));
-  background-image: -webkit-linear-gradient(top, #62c462, #57a957);
-  background-image: -o-linear-gradient(top, #62c462, #57a957);
-  background-image: linear-gradient(top, #62c462, #57a957);
-  background-repeat: repeat-x;
-  filter: progid:dximagetransform.microsoft.gradient(startColorstr='#62c462', endColorstr='#57a957', GradientType=0);
-  -webkit-border-radius: 4px;
-  margin-top:10px;
-  margin-left:12px;
-}
-
-#pic-green {
-  position:absolute;
-  top:1px;
-  margin:5px;
-
-}
-
-
-#pic-red {
-  position:absolute;
-  margin:5px;
-
-}
 
 #personal-info {
   position:absolute;
@@ -132,12 +82,7 @@ h3 {
 
 }
 
-hr {
-  position:relative ;
-  top:150px;
-  right: 18px;
-  left: 0px;
-}
+
 
 .left-60 {
   position:absolute;
@@ -153,17 +98,24 @@ hr {
 
 #post-seperate{
 
-  border-bottom: 1px solid cadetblue;
-  margin:10px 360px 20px 305px;
 
+}
+
+#search{
+  position: relative;
+  margin-top:30px;
+  margin-left: 780px;
+  z-index:10;
 }
 
 #edit{
   color: darkblue;
 }
 #talking {
-  position: relative;
-  margin: 180px 400px 20px 300px;
+  position: absolute;
+  width:350px;
+  margin-top:7%;
+  margin-left:50%;
   padding-top:5px;
   padding-left:10px;
   border: 1px solid #d3d3d3;
@@ -174,8 +126,9 @@ hr {
 
 #friend-list {
   position: absolute;
-  width:270px;
-  margin: -55px 0px 20px 750px;
+  width:350px;
+  margin-top:7%;
+  margin-left:20%;
   padding-top:5px;
   padding-left:10px;
   border: 1px solid #d3d3d3;
@@ -186,32 +139,55 @@ hr {
 
 //
 
+#login1 {
+  position:absolute;
+ margin-top: -38%;
+ margin-left:63%;
+  width:15%;
 
+}
+
+
+#login2{
+  position:absolute;
+ margin-top:-37.5%;
+ margin-left:80%;
+  width:20%;
+
+
+}
+
+.logintext{
+  position:relative;
+  margin-top:-10%;
+  margin-left:2%;
+  color:white;
+}
 
 #connect {
   position:absolute;
-  margin: 120px 620px 5px 10px;
+  margin-top:-6%;
+  margin-left:23.1%;
   color: white;
 }
 
 @-webkit-keyframes greenPulse {
-  from { background-color: #749a02; -webkit-box-shadow: 0 0 9px #333; }
-  50% { background-color: #91bd09; -webkit-box-shadow: 0 0 18px #91bd09; }
-  to { background-color: #749a02; -webkit-box-shadow: 0 0 9px #333; }
+  from { background-color: cadetblue; -webkit-box-shadow: 0 0 9px #333; }
+  50% { background-color: lightblue; -webkit-box-shadow: 0 0 18px #333; }
+  to { background-color: cornflowerblue; -webkit-box-shadow: 0 0 9px #333; }
 }
 .green.button {
   -webkit-animation-name: greenPulse;
   -webkit-animation-duration: 2s;
   -webkit-animation-iteration-count: infinite;
   -webkit-border-radius: 8px;
-  background-color: #7cfc00;
+  background-color: cadetblue;
   font-size: 20px ;
   font-family: arial;
   color:white;
   padding: 3px;
   width:300px;
   text-decoration: none;
-  margin:-22px 740px 10px -50px;
   padding:10px 15px 10px 15px;
 
 
@@ -221,10 +197,43 @@ hr {
   position: relative;
   left: 270px;
   color: darkblue;
+  width:20%;
+  margin-top:8%;
 }
-  a:link, a:visited {
-    color: gray;
-  }
+
+a:link, a:hover, a:visited{
+  color:white
+}
+
+.tweet span {
+
+  color: #000;
+  font-family: 'BebasNeueRegular',sans-serif;
+  font-size: 36px;
+  line-height: .8;
+}
+
+#video{
+  position:absolute;
+  margin-top:-8%;
+  margin-left:28%;
+  max-width:100%;
+}
+
+#video-border{
+  position:absolute;
+  margin-top:-7%;
+  margin-left:32.5%;
+
+}
+
+#video1{
+  max-width: 100%;
+}
+
+
+
+
 
 
 

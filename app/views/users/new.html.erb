@@ -1,8 +1,9 @@
   <%= form_for(@user)  do |f| %>
-    <div id="main_wrapper">
+    <div id="center">
       <h2>Register</h2>
-       <p id="intro">Enjoy your movie without interruptions</p>
-       <p id="subintro">- Connect and chat with others -</p>
+       <p id="intro">Enjoy your movie<br/>
+        without<br/> interruptions</p>
+       <p id="subintro">Connect and chat<br/> with others</p>
 
 
       <div id="form-container">
@@ -22,26 +23,52 @@
         <%= f.label :password %><br/>
         <%= f.password_field :password %><br />
 
-
         <br/>
         <br/>
-
-        <%= f.submit "Join", :class => "green button" %>
-        <br/>
-        <p>Already a member ? Sign in below.</p>
+        <%= f.submit "Sign Up", class: "green button" %>
         </div>
+  <% end %>
+   <div id="video">
+     <%=image_tag("cinemascreen.jpg") %>
+   </div>
 
-   <% end %>
+  <div id="video-border">
+    <%= video_tag ('muppets.mp4'),id:'video1', :size => "340x260", controls: true %>
+
+  </div>
+      <div id="cinemas">
+        <p>Where can you<br/>
+          use iUsher?
+        </p>
+        <%=  image_tag('vue.jpg') %>
+        <br/>
+        <br/>
+        <%=  image_tag('odeon.jpg') %>
+        <br/>
+        <br/>
+        <%=  image_tag('cineworld.jpg') %>
+        <br/>
+        <br/>
+        <%=  image_tag('omniplex.jpg') %>
+      </div>
+
+
   <% if signed_in? %>
 
   <% else %>
+
       <%=  form_for(:session, url:sessions_path) do |f| %>
           <div id="login1">
-            <%= f.label :email %><%= f.text_field :email %>
+           <%= f.label :email,class:"logintext" %>
+            <%= f.email_field :email %>
           </div>
           <div id="login2">
-            <%= f.label :password %><%= f.password_field :password %><%= f.submit "Log in" %>
+            <%= f.label :password,class:"logintext" %>
+            <%= f.password_field :password %><%= f.submit "Log in" %>
           </div>
+
       <% end %>
+
   <% end %>
-</div>
+  </div>
+

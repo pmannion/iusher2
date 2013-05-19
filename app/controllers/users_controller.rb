@@ -1,10 +1,10 @@
 class UsersController < ApplicationController
 
   def index
+   @user = User.paginate(per_page: 6,
+                       :page => params[:page],
+                       :order => 'created_at DESC')
 
-    @user = User.paginate(per_page: 7,
-                     :page => params[:page],
-                    :order => 'created_at DESC').search(params[:search_query])
     @user_friendships = current_user.user_friendships.all
 
   end
@@ -39,9 +39,12 @@ class UsersController < ApplicationController
     @user = User.find(params[:id])
     if
     @user.update_attributes(params[:user])
-      redirect_to @user.profile_name, :notice => 'Your details have been updated'
+      flash[:success] = "You have updated your details"
+      redirect_to :back
     end
   end
+
+
 end
 
 

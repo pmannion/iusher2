@@ -1,4 +1,4 @@
-<div id="plain-wrapper">
+
   <div id="search">
     <h4>Find a Buddy !</h4>
       <%= form_tag users_path, :method => 'get', id:'users_search' do %>
@@ -7,6 +7,7 @@
         <%= submit_tag 'Search', :name => nil , class: 'btn btn-info' %>
     </div>
 
+  <div id="all-users">
   <% @user.each do |user| %>
       <div id="users-index">
         <div class="status">
@@ -21,9 +22,14 @@
           </div>
         </div>
       </div>
+
    <% end %>
-
-
   </div>
-   <%= will_paginate %>
+
+  <div id="paginate">
+   <%= will_paginate @user %>
+ </div>
+
+
+
 <% end %>

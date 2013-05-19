@@ -6,8 +6,6 @@ class ComplaintsController < ApplicationController
     @complaints = Complaint.paginate(:per_page => 15,
         :page => params[:page],
         :order => 'created_at DESC')
-
-
    respond_to do |format|
       format.html # index.html.erb
       format.json { render json: @complaints }
@@ -35,7 +33,6 @@ end
   # GET /complaints/new.json
   def new
     @complaint = Complaint.new
-
 
     respond_to do |format|
       format.html # new.html.erb
@@ -95,7 +92,4 @@ end
       format.json { head :no_content }
     end
   end
-
-
-
 end

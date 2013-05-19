@@ -1,6 +1,6 @@
 class Complaint < ActiveRecord::Base
   attr_accessible :branch, :comment, :latitude, :longitude, :screen, :seat, :admin_id, :status
-  validates :branch, presence: true
+  validates :admin_id, presence: true
   validates :screen, presence: true
   validates :seat, presence: true
 

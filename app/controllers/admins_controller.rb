@@ -7,6 +7,7 @@ class AdminsController < ApplicationController
   begin
     @admins = Admin.find(params[:id])
     @adminpost = Post.all
+    @user = User.all
   rescue ActiveRecord::RecordNotFound
     logger.error "Attempt to access invalid action #{params[:id]}"
     flash[:notice] = "invalid action"

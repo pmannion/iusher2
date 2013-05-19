@@ -12,24 +12,30 @@
  *= require_tree .
  */
 
+html,body{
+  width:100%;
+  height: 100%;
+  font-size:16px;
+  margin:0;
+  padding:0;
 
-
-html{
-
-    width:0px;
-    height:0px;
-    background-image: url("greygrad.jpg");
-    margin-left:120px;
-    z-index: -50;
 }
 
 
+
+#header{
+  background-image:url("greygrad.jpg");
+  height:150px;
+}
+
+
+
 #plain-wrapper {
-    width:1000px;
-    height:800px;
+    width:80%;
+    height:px;
     margin-top: 20px;
     margin-left: 60px;
-    z-index: 10000;
+
 }
 
 #main_wrapper {
@@ -46,13 +52,11 @@ html{
 }
 
 #nav {
-    position:absolute;
-    top:15px;
-    bottom:20px;
-    width:1025px;
+    width:100%;
+    background-color:cadetblue;
     height:60px;
-    margin-left: 60px;
-    text-shadow: 3px 3px 3px ghostwhite;
+    border-bottom:10px solid #d3d3d3;
+
 }
 
 #users-index{
@@ -63,66 +67,42 @@ html{
 #logo {
     position:relative;
     top:5px;
-    right:900px;
-    bottom:400px;
-    left:60px;
-
-
+    margin-right:75%;
 }
 
-#login1 {
-    position:absolute;
-    margin:520px 0px 0px 550px;
-    display:inline;
-    z-index: 20005;
-    color:#000000;
-    font-size: 15px;
-}
-
-#login2 {
-    position:absolute;
-    margin:520px 0px 0px 800px;
-    display:inline;
-    z-index: 20005;
-    color:#000000;
-    font-size: 15px;
-
-}
 
 #nav li {
     display: inline;
+
 
 }
 
 #nav li a {
     font-size:5px;
     text-decoration: none;
-    float:right;
     padding: 10px;
 
-}
 
-#nav li a:hover {
-    margin-top:-2px;
-    padding-bottom:8px;
 }
 
 
 #intro {
     position:absolute;
     margin-left:20px;
-    color:white;
-    font-size:30px;
-    font-family:"calibri";
+    color: #000;
+    font-family: 'BebasNeueRegular',sans-serif;
+    font-size: 3.2em;
+    line-height: 1;
 }
 
 #subintro {
-    position:absolute;
-    margin-top:30px;
-    margin-left:180px;
-    color:white;
-    font-size:15px;
-    font-family:"calibri";
+    position:relative;
+    margin-top:130px;
+    margin-left:20px;
+    color: cadetblue;
+    font-family: 'BebasNeueRegular',sans-serif;
+    font-size: 1.9em;
+    line-height: .8;
 }
 //posts scrollbar------------------------------
 
@@ -283,40 +263,35 @@ html{
     cursor:pointer;
 }
 
-#search{
-    position: relative;
-    margin-top:30px;
-    margin-left: 780px;
-}
-#footer{
-    position:absolute;
-    margin-top: 710px;
-    margin-left:30px;
-    float:left;
-    color: white;
-
+#footer {
+  position:absolute;
+  background-image:url("greygrad.jpg");
+  height:100px;
+  color:white;
+  margin-top:5%;
+  margin-bottom: 0;
+  width:100%;
+  border-top:1.3em solid dimgray;
 }
 
 #copyright {
     position:absolute;
-    margin-top: 710px;
+
     margin-left:530px;
     float:left;
     color: white;
 
 }
 
-
-
 //styles for cinema logos ----------------------
 #cinemas{
-    position:absolute;
-    top: 120px;
-    right:0px;
-    bottom: 200px;
-    left: 1270px;
+    position:relative;
+   width:8%;
+    top: 50px;
+    left: 2%;
     padding-bottom:5px;
-    z-index: 800000;
+    z-index: 20;
+
 
 }
 
@@ -324,15 +299,6 @@ html{
     color: white;
     font-size: 1.5em;
 }
-
-
-.clear {
-  clear: both;
-  height: 0;
-  overflow: hidden;
-}
-
-
 
 
 

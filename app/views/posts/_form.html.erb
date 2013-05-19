@@ -10,13 +10,12 @@
           </ul>
         </div>
     <% end %>
-
     <div class="field">
 
       <%= f.text_area :content %>
 
 
     </div>
-    <%= button_to "Submit New Post", posts_path, class: "post button" %>
+    <%= f.submit "Submit New Post", class: "post button" %>
 
 <% end %>

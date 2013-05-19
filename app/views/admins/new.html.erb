@@ -1,9 +1,9 @@
-
+<div id="center">
 <%= form_for(@admin) do |f| %>
-    <div id="main_wrapper">
+
       <h2>Admin Register</h2>
       <p id="intro">This section is for Admin only</p>
-      <p id="subintro">- If You are not admin you can sign up for an account <%= link_to "Click here !", root_path %> -</p>
+      <p id="subintro">- If You are not admin you can sign up for an account <%= link_to "Click here !", root_path, id: 'bluestatus' %> -</p>
 
       <div id="form-container">
     <%= f.label :company %>
@@ -23,9 +23,9 @@
 
      <%= f.label :password %>
      <%= f.password_field :password %>
-    <br/>
-    <%= f.submit 'create admin account' %>
+    <br/><br/>
+    <%= f.submit 'create admin account', class: 'green button' %>
 
 <% end %>
    </div>
-</div>
+  </div>

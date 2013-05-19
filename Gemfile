@@ -5,9 +5,10 @@ gem 'bootstrap-sass', '2.1'
 gem 'bcrypt-ruby', '3.0.1'
 gem 'factory_girl_rails', '4.1.0'
 gem 'state_machine'
-gem "paperclip", "~> 3.0"
+gem "paperclip"
 gem 'will_paginate', '~> 3.0'
 gem 'masonry-rails'
+gem 'turbolinks'
 gem 'js-routes'
 gem 'activerecord-reputation-system', require: 'reputation_system'
 

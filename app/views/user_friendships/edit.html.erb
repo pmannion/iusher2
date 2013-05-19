@@ -1,8 +1,9 @@
-<div id="plain-wrapper">
+<h1>Viewing Contact</h1>
+<div id="contact-border">
 <div class="page-header">
-  <h1>Viewing Contact</h1>
+
 </div>
-  <div class="form-actions">
+
     <% if @user_friendship.requested? %>
         <%= form_for @user_friendship, url: accept_user_friendship_path(@user_friendship), method: :put do |form| %>
             <%= submit_tag "Accept Friendship", class: 'btn btn-primary' %>
@@ -12,6 +13,5 @@
     <%= form_for @user_friendship, url: user_friendship_path(@user_friendship), method: :delete do |form| %>
         <%= submit_tag "Delete Friendship", class: 'btn btn-danger' %>
     <% end %>
-</div>
 
- </div>
+</div>

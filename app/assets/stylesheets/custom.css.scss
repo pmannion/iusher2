@@ -3,7 +3,7 @@
 aside {
   section {
     padding: 10px 0;
-    border-top: 1px solid light #a9a9a9;
+
     &:first-child {
       border: 0;
       padding-top: 0;
@@ -23,7 +23,3 @@ aside {
   }
 }
 
-.gravatar {
-  float: left;
-  margin-right: 10px;
-}

@@ -1,11 +1,11 @@
 class User < ActiveRecord::Base
-  attr_accessible :email, :first_name, :last_name, :password, :profile_name, :trust_level, :user_type, :avatar
+  attr_accessible :email, :first_name, :last_name, :password, :profile_name, :trust_level, :user_type, :pic
 
   belongs_to :admin
-
+  has_attached_file :pic,:default_url => 'defaultpic.PNG'
   has_many :posts
   has_many :complaints
-  has_attached_file :avatar, :styles => { :medium => "300x300>", :thumb => "100x100>" }, :default_url => "/images/:style/missing.png"
+
   has_many :user_friendships
   has_many :friends, through: :user_friendships,
            conditions: { user_friendships: { state: 'accepted' } }
@@ -20,30 +20,29 @@ class User < ActiveRecord::Base
 
 
   before_save { |user| user.email = email.downcase }
-  before_save :create_remember_token
+  before_save :create_remember_token, only:  :create
 
-  validates :first_name, presence: true, length: {maximum: 30}
-  validates :last_name, presence: true, length: {maximum: 40}
-  validates :profile_name, presence: true, uniqueness: true, length: {maximum: 25}
+  validates :first_name, presence: true, length: {maximum: 30}, :on => :create
+  validates :last_name, presence: true, length: {maximum: 40}, :on => :create
+  validates :profile_name, presence: true, uniqueness: true, length: {maximum: 25}, :on => :create
   VALID_EMAIL_REGEX = /\A[\w+\-.]+@[a-z\d\-.]+\.[a-z]+\z/i
   validates :email, presence: true, format: { with:VALID_EMAIL_REGEX },
-            uniqueness: {case_sensitive: false}
-  validates :password, presence: true, length: {minimum: 6}
+            uniqueness: {case_sensitive: false}, :on => :create
+  validates :password, presence: true, length: {minimum: 6}, :on => :create
 
 
   def full_name
     first_name + " " + last_name
   end
 
-  def self.search(search_query)
-  if search_query
-    find.all(conditions: ['first_name: like?', "%#{search_query}%"])
-  else
-    find.all
-  end
-end
 
-
+  #def self.search(search_query)
+  #  if search_query
+  #    find(:all, :conditions => ['first_name ILIKE ? OR last_name ILIKE ? OR profile_name ILIKE ?', "%#{search_query}%", "%#{search_query}%", "%#{search_query}%"])
+  #  else
+  #    find(:all)
+  #  end
+  #end
 
   private
   def create_remember_token

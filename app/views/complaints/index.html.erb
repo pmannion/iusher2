@@ -1,15 +1,16 @@
 
-<div id="plain-wrapper">
+<div id="center">
   <% if @admin %>
 <h1>Listing complaints</h1>
-<center>
+<div id ="complaint-list">
 <table>
   <tr>
-    <th>Branch</th>
+    <th>Time Reported</th>
+    <th>Action Taken</th>
+    <th>Branch id</th>
+    <th>Branch name</th>
     <th>Screen</th>
     <th>Seat</th>
-    <th>Longitude</th>
-    <th>Latitude</th>
     <th>Trust Level</th>
     <th>status</th>
     <th>Controls</th>
@@ -17,45 +18,46 @@
 
 
 <% @complaints.each do |complaint| %>
-
   <tr class= "<%= cycle('list_line_odd', 'list_line_even') %>">
+    <td><%= time_ago_in_words(complaint.created_at) %> ago</td>
+    <% if complaint.status == "confirmed" %>
+      <td><%= time_ago_in_words(complaint.updated_at) %> ago</td>
+    <% else %>
+      <td id="red-status">none</td>
+    <% end %>
+    <td><%= complaint.admin_id %></td>
     <td><%= complaint.branch %></td>
     <td><%= complaint.screen %></td>
     <td><%= complaint.seat %></td>
-    <td><%= complaint.longitude %></td>
-    <td><%= complaint.latitude %></td>
     <% if complaint.trust_level == "high" %>
       <td id="green-status"><%= complaint.trust_level %></td>
     <% else %>
       <td id="red-status"><%= complaint.trust_level %></td>
     <% end %>
     <% if complaint.status == "pending" %>
-    <td id="orange-status"><%= complaint.status %></td>
+      <td id="orange-status"><%= complaint.status %></td>
     <% else %>
-    <td id="green-status"><%= complaint.status %></td>
+      <td id="green-status"><%= complaint.status %></td>
     <% end %>
 
-    <td><%= link_to 'Show', complaint %></td>
-    <td><%= link_to 'Edit', edit_complaint_path(complaint) %></td>
-    <td><%= link_to 'Destroy', complaint, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+    <td><%= link_to 'Show', complaint, id: 'bluestatus' %></td>
+    <td><%= link_to 'Edit', edit_complaint_path(complaint), id: 'bluestatus' %></td>
+    <td><%= link_to 'Destroy', complaint, method: :delete, data: { confirm: 'Are you sure?' }, id: 'red-status' %></td>
   </tr>
 <% end %>
 
 </table>
-
+</div>
   <div id="paginate">
     <%= will_paginate @complaints %>
   </div>
-</center>
-
 <br />
 
-<%= link_to 'New Complaint', new_complaint_path %>
   <% else  %>
     <h3>Nothing to see here !</h3>
       <!--use this link to return to the current users profile path-->
 
   <% end %>
 
-</div>
 
+ </div>

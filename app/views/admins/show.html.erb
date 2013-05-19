@@ -1,11 +1,13 @@
 
-<div id="plain-wrapper">
-   <div id="pic-border-green">
+<div id="center">
+  <div id= 'profile-info'>
 
-     <div id="pic-green">
+        <div id="pic-border-green">
+          <div id="pic-green">
 
+          </div>
         </div>
-      </div>
+        </div>
 
 <div id="personal-info">
   <h3><%= @admins.title %></h3>
@@ -14,10 +16,23 @@
   User Type: <%= @admins.user_type %><br/>
   Member Since:  <%= @admins.created_at.strftime("%d %b. %Y") %><br/>
 </div>
-  <hr />
+
+
+  <!-- sub menu bar -->
+  <div id="profile-bar">
+    <ul>
+      <li class="profile-hover1"><%= image_tag("rep.png") %></li>
+      <li class="profile-hover2"><%= image_tag("postcount.png") %></li>
+      <li class="profile-hover3"><%= link_to image_tag("buddies.png"),user_friendships_path %></li>
+      <li class="profile-hover4"><%= link_to image_tag("complaint.png"), new_complaint_path %></li>
+
+    </ul>
+  </div>
+  <!--  ----------------------------------------------   -->
+
 
   <div id="connectad">
-    <%= link_to image_tag("thumbup1.png"), vote_admin_path(@admins, type: "up"), method: "post"%>
+
     <p id="like">Like</p>
 
   </div>
@@ -38,24 +53,25 @@
   <div id="talking">
     <p><b>Comments</b></p>
   </div>
-  <div id="adminpost">
+  <div id="post">
   <% @adminpost.each do |post| %>
-      <div id="post-seperate">
-        <div class="status">
-          <div class="row">
-            <div class="span7">
-              <%= post.content %>
-              <div class="meta">
-                <%= link_to time_ago_in_words(post.created_at) + " " + "ago", post %>
-                <span class="admin">
-                    <%= link_to 'Edit', edit_post_path(post) %>
-                  <%= link_to 'Destroy', post, method: :delete, data: { confirm: 'Are you sure?' } %>
-                  </span>
-              </div>
-            </div>
+        <div id="post-seperate">
+
+          <%= post.content %>
+          <div class="meta">
+
+                <span class='admin'>
+                  <div id="thumbs">
+                    <%= link_to image_tag("thumbup1.png"), vote_post_path(post, type: "up"), method: "post", id: "vote-up" %>
+                    <%= link_to image_tag("thumdown1.png"), vote_post_path(post, type: "down"), method: "post", id: "vote-down" %>
+                    <%= time_ago_in_words(post.created_at) + " " + "ago" %>
+                  </div>
+                  <%= pluralize post.reputation_for(:votes).to_i, "votes" %>
+                  <%= link_to 'Edit', edit_post_path(post) %>
+                  <%= link_to 'Delete', post, method: :delete, data: { confirm: 'Are you sure?' } %>
+                 </span>
           </div>
         </div>
-      </div>
 
 
   <% end %>

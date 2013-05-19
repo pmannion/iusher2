@@ -71,6 +71,8 @@ img {
     vertical-align: middle;
     border: 0;
     -ms-interpolation-mode: bicubic;
+
+
 }
 
 #map_canvas img {
@@ -524,6 +526,7 @@ h6 {
     padding-bottom: 17px;
     margin: 18px 0;
     border-bottom: 1px solid #eeeeee;
+
 }
 
 .page-header h1 {
@@ -759,7 +762,7 @@ legend small {
     color: #999999;
 }
 
-label,
+
 input,
 button,
 select,
@@ -4031,6 +4034,7 @@ input[type="submit"].btn.btn-mini {
     margin: 18px 0;
 
 
+
 }
 
 .pagination ul {
@@ -4074,12 +4078,10 @@ input[type="submit"].btn.btn-mini {
     cursor: default;
 }
 
-.pagination .disabled span,
+.pagination ,
 .pagination .disabled a,
 .pagination .disabled a:hover {
-    color: lightblue;
-    cursor: default;
-    background-color: lightblue;
+ color:white;
 }
 
 .pagination li:first-child a {

@@ -1,4 +1,4 @@
-<div id="plain-wrapper">
+<div id="show-complaint">
 <p id="notice"><%= notice %></p>
 
 <p>
@@ -26,12 +26,10 @@
   <%= @complaint.latitude  %>
 </p>
 
+<h4>Feed back email has been sent to:</h4>
 <p>
-  <b>Comment:</b>
   <%= @complaint.comment %>
 </p>
-
-
-<%= link_to 'Edit', edit_complaint_path(@complaint) %> |
-<%= link_to 'Back', complaints_path %>
+  <%= link_to 'Back', complaints_path, class:'btn btn-success' %>
 </div>
+
