@@ -1,16 +1,13 @@
 
 <div id="center">
   <div id= 'profile-info'>
-        <%= link_to "edit profile", edit_admin_path %>
-        <div id="pic-border-green">
-          <div id="pic-green">
-
-          </div>
-        </div>
-        </div>
+    <% if current_admin %>
+      <%= link_to "edit profile", edit_admin_path(current_admin) %>
+     <% end %>
+   </div>
 
 <div id="personal-info1">
-  <%= pic_for @admins %>
+  <%= pic_for @admins, size: "100x80" %>
   <div id="info-text1">
   <h3><%= @admins.title %></h3><br/>
   Company: <%= @admins.company %><br/>
@@ -27,10 +24,19 @@
       <li class="profile-hover1"><%= image_tag("rep.png") %></li>
       <li class="profile-hover2"><%= image_tag("postcount.png") %></li>
       <li class="profile-hover3"><%= link_to image_tag("complaints.png"), complaints_path %></li>
-      <li class="profile-hover5"><%= link_to image_tag("newpost.png") %>
+      <li class="profile-hover5"><%= link_to image_tag("newpost.png"), new_post_path %>
     </ul>
   </div>
   <!--  ----------------------------------------------   -->
+
+  <!-- statistics belonging to graphics and links for sub menu bar -->
+
+
+
+  <div id="post-count">
+    ( <%= @adminpost.count %> )
+  </div>
+
 
   <div id="talking">
     <p><b>Comments</b></p>
@@ -38,18 +44,20 @@
   <div id="post">
   <% @adminpost.each do |post| %>
         <div id="post-seperate">
-
+          <%= pic_for @admins, size: "60x50" %>
           <%= post.content %>
           <div class="meta">
 
                 <span class='admin'>
                   <div id="thumbs">
+                    <% if current_user %>
                     <%= link_to image_tag("thumbup1.png"), vote_post_path(post, type: "up"), method: "post", id: "vote-up" %>
                     <%= link_to image_tag("thumdown1.png"), vote_post_path(post, type: "down"), method: "post", id: "vote-down" %>
+                    <% end %>
                     <%= time_ago_in_words(post.created_at) + " " + "ago" %>
                   </div>
                   <%= pluralize post.reputation_for(:votes).to_i, "votes" %>
-                  <%= link_to 'Edit', edit_post_path(post) %>
+
                   <%= link_to 'Delete', post, method: :delete, data: { confirm: 'Are you sure?' } %>
                  </span>
           </div>

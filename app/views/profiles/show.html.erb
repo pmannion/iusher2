@@ -6,131 +6,51 @@
 
 
 <!--button to connect to user friendships,if at other users, if at own profile no button-->
-  <div id="connect">
-    <% if profile_path(@current_user.profile_name) == profile_path %>
-        <%= link_to 'Edit Profile', edit_user_path, class: 'btn btn-success' %>
-        <% else if @current_user.friends.include?(@user) %>
-          <%= link_to "Connected ", "#", class: "btn btn-warning" %>
-        <% else %>
-          <%= link_to "Add Buddy ", new_user_friendship_path(friend_id: @user.profile_name) , class: "btn btn-info",
-          id: 'add-buddy', data:{ friend_id: @user.profile_name} %>
-        <% end %>
-     <% end %>
-   <% end %>
-  </div>
+   <%= render 'profiles/connect' %>
 
 
-      <!-- statistics belonging to graphics and links for sub menu bar -->
-  <div id="reputation">
+
+   <!-- statistics belonging to graphics and links for sub menu bar -->
+   <div id="reputation">
      ( <%= @user.reputation_for(:votes).to_i %> )
-   </div>
-
-   <div id="buddy-size">
-     ( <%= @user_friendships.count %> )
    </div>
 
    <div id="post-count">
      ( <%= @post.count %> )
    </div>
 
-    <!--  ----------------------------------------------   -->
-
   <!-- sub menu bar -->
-  <div id="profile-bar">
-    <ul>
-      <li class="profile-hover1"><%= image_tag("rep.png") %></li>
-      <li class="profile-hover2"><%= image_tag("postcount.png") %></li>
-      <li class="profile-hover3"><%= link_to image_tag("buddies.png"),user_friendships_path %></li>
-      <li class="profile-hover4"><%= link_to image_tag("complaint.png"), new_complaint_path %></li>
-      <li class="profile-hover5"><%= link_to image_tag("newpost.png"),new_post_path, id:'new-post',data:{ user_id: @user.profile_name} %></li>
-    </ul>
-  </div>
-  <!--  ----------------------------------------------   -->
+  <%= render 'profiles/submenu' %>
 
-  <div id="personal-info">
-    <%= gravatar_for @user, size: "80x80" %>
-    <div id="info-text">
-       <h3><%= @user.full_name %></h3><br/>
-       Profile Name:  <%= @user.profile_name %><br/>
-       Member Since:  <%= @user.created_at.strftime("%d %b. %Y") %>
-     </div>
+
+  <!-- personal info --->
+  <%= render 'profiles/personalinfo' %>
+
+
+   <div id="friend-list">
+     <p><b>Buddy List</b></p>
    </div>
 
+   <div id="talking">
+     <p><b>Comments</b></p>
+   </div>
 
-      <div id="friend-list">
-        <p><b>Buddy List</b></p>
-      </div>
-
-      <div id="talking">
-        <p><b>Comments</b></p>
-      </div>
-
-      <div id="post">
-        <% @post.each do |post| %>
-            <div id="post-seperate">
-              <%=  gravatar_for @user,:size => "60x60" %>
-              <%= post.content %>
-              <div class="meta">
-
-                <span class='admin'>
-                  <div id="thumbs">
-                  <%= link_to image_tag("thumbup1.png"), vote_post_path(post, type: "up"), method: "post", id: "vote-up" %>
-                  <%= link_to image_tag("thumdown1.png"), vote_post_path(post, type: "down"), method: "post", id: "vote-down" %>
-                  <%= time_ago_in_words(post.created_at) + " " + "ago" %>
-                  </div>
-                  <%= pluralize post.reputation_for(:votes).to_i, "votes" %>
-                  <% if profile_path(@current_user.profile_name) == profile_path %>
-                    <%= link_to 'Delete', post, method: :delete, data: { confirm: 'Are you sure?' }, id: 'bluestatus' %>
-                  <% end %>
-                  <%= link_to "Reply", new_post_comment_path(post), id: 'bluestatus' %>
-                 </span>
-              </div>
-            </div>
-        <% end %>
-      </div>
-
-
+  <!-- user posts -->
+  <%= render 'profiles/posts' %>
 
 
 <!-- all users accepted friends, conditional to show the friends list only on the logged in users profile page -->
-       <% if profile_path(@current_user.profile_name) == profile_path %>
-        <div id="friend-container">
-          <% @profile_friendships.each do |friendship| %>
-             <% friend = friendship.friend %>
-               <% if friendship.accepted? && profile_path(@current_user.profile_name) == profile_path  %>
-                 <div id="allfriends">
-                    <%= link_to (gravatar_for friend, size: "60x60"), profile_path(friend.profile_name) %><br/>
-                    <%= friend.first_name %>
-                  </div>
-              <% end %>
-              <% end %>
-            </div>
-         <% else %>
-  <div id="friend-container">
-    <% @friend_list.each do |friendship| %>
-        <% friend = friendship.friend %>
-        <% if friendship.accepted? && profile_path(@current_user.profile_name) != profile_path  %>
-            <div id="allfriends">
-              <%= link_to (gravatar_for friend, size: "60x60"), profile_path(friend.profile_name) %><br/>
-              <%= friend.first_name %>
-            </div>
-        <% end %>
-    <% end %>
+   <%= render 'profiles/buddies' %>
+
+<!-----      ----->
+  <div id= "cinema-container">
+    <div id="allcinemas">
+      <% @admin.each do |admins| %>
+        <%= link_to admins.branch, admin_path(admins) %>
+      <% end %>
+     </div>
   </div>
+<% end %>
 </div>
-<% end %>
-
-
-<% if current_admin  %>
-    <div id="center">
-      <p id="intro1"><span>Whoops !</span><br/>
-        Nothing to see<br/> on this page</p>
-      <p id="subintro1">Get me<br/>Out of here</p>
-      <%= link_to "Home", root_path, class: "green button1" %>
-      <!--use this link to return to the current users profile path-->
-    </div>
-
-<% end %>
-
 
 

@@ -9,6 +9,7 @@ class Complaint < ActiveRecord::Base
 
   STATUS_TYPES = ["confirmed", "pending"]
 
+
   def trust_level
     if admin.nil?
       return 'high'

@@ -1,7 +1,9 @@
 <% if current_admin && admin_signed_in? %>
 <div id="center">
-
-<h1>Listing complaints</h1>
+ <div id="complaint-logo">
+   <p>Logged in as</p>
+  <%= pic_for current_admin %>
+ </div>
 <div id ="complaint-list">
 <table>
   <tr>
@@ -18,6 +20,7 @@
 
 
 <% @complaints.each do |complaint| %>
+   <% if complaint.admin_id == current_admin.id %>
   <tr class= "<%= cycle('list_line_odd', 'list_line_even') %>">
     <td><%= time_ago_in_words(complaint.created_at) %> ago</td>
     <% if complaint.status == "confirmed" %>
@@ -25,6 +28,7 @@
     <% else %>
       <td id="red-status">none</td>
     <% end %>
+
     <td><%= complaint.admin_id %></td>
     <td><%= complaint.branch %></td>
     <td><%= complaint.screen %></td>
@@ -45,7 +49,7 @@
     <td><%= link_to 'Destroy', complaint, method: :delete, data: { confirm: 'Are you sure?' }, id: 'red-status' %></td>
   </tr>
 <% end %>
-
+<% end %>
 </table>
 </div>
   <div id="paginate">

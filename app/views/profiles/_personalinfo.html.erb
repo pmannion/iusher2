@@ -1,0 +1,9 @@
+<div id="personal-info">
+  <%= gravatar_for @user, size: "80x80" %>
+  <div id="info-text">
+    <h3><%= @user.full_name %></h3><br/>
+    Profile Name:  <%= @user.profile_name %><br/>
+    Member Since:  <%= @user.created_at.strftime("%d %b. %Y") %>
+    Buddies:   <%= @user.user_friendships.count %>
+  </div>
+</div>

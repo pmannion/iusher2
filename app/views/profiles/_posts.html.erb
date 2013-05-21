@@ -1,0 +1,22 @@
+<div id="post">
+  <% @post.each do |post| %>
+    <div id="post-seperate">
+      <%=  gravatar_for @user,:size => "60x60" %>
+      <%= post.content %>
+        <div class="meta">
+          <span class='admin'>
+            <div id="thumbs">
+              <%= link_to image_tag("thumbup1.png"), vote_post_path(post, type: "up"), method: "post", id: "vote-up" %>
+              <%= link_to image_tag("thumdown1.png"), vote_post_path(post, type: "down"), method: "post", id: "vote-down" %>
+              <%= time_ago_in_words(post.created_at) + " " + "ago" %>
+            </div>
+              <%= pluralize post.reputation_for(:votes).to_i, "votes" %>
+              <% if profile_path(@current_user.profile_name) == profile_path %>
+              <%= link_to 'Delete', post, method: :delete, data: { confirm: 'Are you sure?' }, id: 'bluestatus' %>
+            <% end %>
+              <%= link_to "Reply", new_post_comment_path(post), id: 'bluestatus' %>
+           </span>
+        </div>
+      </div>
+  <% end %>
+</div>

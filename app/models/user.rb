@@ -3,7 +3,6 @@ class User < ActiveRecord::Base
 
 #--------- relationships  ----------#
   belongs_to :admins
-
   has_many :posts
   has_many :complaints
   has_many :comments

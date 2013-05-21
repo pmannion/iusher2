@@ -8,8 +8,9 @@ class Admin < ActiveRecord::Base
   has_secure_password
   has_many :posts
   has_many :complaints
-  has_and_belongs_to_many :users
+  has_many :users
   has_attached_file :pic, default_url: 'defaultpic.PNG'
+  has_reputation :votes, source: {reputation: :votes, of: :posts}, aggregated_by: :sum
 
   #---------------- validations ---------------------#
   validates :branch, presence: true

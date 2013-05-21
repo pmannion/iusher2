@@ -1,0 +1,10 @@
+<!-- sub menu bar -->
+<div id="profile-bar">
+  <ul>
+    <li class="profile-hover1"><%= image_tag("rep.png") %></li>
+    <li class="profile-hover2"><%= image_tag("postcount.png") %></li>
+    <li class="profile-hover3"><%= link_to image_tag("buddies.png"),user_friendships_path %></li>
+    <li class="profile-hover4"><%= link_to image_tag("complaint.png"), new_complaint_path %></li>
+    <li class="profile-hover5"><%= link_to image_tag("newpost.png"),new_post_path, id:'new-post',data:{ user_id: @user.profile_name} %></li>
+  </ul>
+</div>

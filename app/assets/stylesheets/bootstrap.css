@@ -3173,8 +3173,8 @@ input[type="submit"].btn.btn-mini {
     -moz-border-radius: 4px;
     border-radius: 4px;
     position:absolute;
-    top:125px;
-    left:935px;
+    top:10%;
+    left:5%;
     z-index: 999999999;
 }
 

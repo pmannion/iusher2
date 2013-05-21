@@ -6,8 +6,8 @@ class AdminsController < ApplicationController
   def show
   begin
     @admins = Admin.find(params[:id])
-    @adminpost =Post.all
-    @user = User.all
+    @adminpost = @admins.posts.order('created_at DESC')
+
 
   rescue ActiveRecord::RecordNotFound
     logger.error "Attempt to access invalid action #{params[:id]}"

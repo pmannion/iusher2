@@ -53,6 +53,7 @@ end
   # POST /posts
   # POST /posts.json
   def create
+  if current_user
     @post = current_user.posts.build(params[:post])
     respond_to do |format|
   if @post.save
@@ -68,8 +69,30 @@ end
       flash[:error] = 'there was a problem'
     end
     format.json { render json: @post.to_json}
-    end
   end
+    end
+
+  else
+    if current_admin
+    @post = current_admin.posts.build(params[:post])
+    respond_to do |format|
+      if @post.save
+        format.html do
+          flash[:success] = 'your post has been created'
+          redirect_to current_admin
+          format.js
+          format.json { render json: @post.to_json}
+        end
+      else
+        format.html do
+          render current_admin
+          flash[:error] = 'there was a problem'
+        end
+        format.json { render json: @post.to_json}
+      end
+      end
+    end
+ end
 end
 
   # PUT /posts/1

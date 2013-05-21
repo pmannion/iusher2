@@ -10,12 +10,10 @@ class ProfilesController < ApplicationController
       @user_friendships = current_user.user_friendships.all
       @profile_friendships = current_user.user_friendships.order('RANDOM()').limit(12)
       @friend_list =  @user.user_friendships.order('RANDOM()').limit(12)
-
-
+      @admin = Admin.all
       render action: :show
-
       else
-
+        render 'public/404'
       end
     end
   end

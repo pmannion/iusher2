@@ -1,7 +1,5 @@
-
-
-
-  <div id="top">
+<!-- nav bar responds to the user or admin state -->
+<div id="top">
  <div id="nav">
   <div id ="push-down">
     <ul>
@@ -10,13 +8,21 @@
         <li><%= link_to 'Manage Buddies', user_friendships_path %></li>
         <li><%= link_to @current_user.full_name, profile_path(@current_user.profile_name)  %></li>
         <li><%= link_to "Log out",signout_path, method: 'delete' %></li>
-      <% else  %>
+      <% else if current_admin  %>
+        <li><%= link_to current_admin.branch, current_admin %></li>
+        <li><%= link_to 'Manage Complaints', complaints_path  %></li>
+        <li><%= link_to 'Contact Us', contact_path  %></li>
+        <li><%= link_to 'About', about_path  %></li>
+        <li><%= link_to "Home", root_path %></li>
+        <li><%= link_to "Log out",signout_path, method: 'delete' %></li>
+     <% else %>
         <li><%= link_to 'Contact Us', contact_path  %></li>
         <li><%= link_to 'About', about_path  %></li>
         <li><%= link_to "Home", root_path %></li>
      </ul>
-   <% end %>
+     <% end %>
+    <% end %>
   </div>
-</div>
+ </div>
 </div>
 
