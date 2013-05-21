@@ -1,12 +1,17 @@
 class UsersController < ApplicationController
 
   def index
-   @user = User.paginate(per_page: 6,
-                       :page => params[:page],
-                       :order => 'created_at DESC')
+      @user = User.search(params[:search_query]).order('created_at DESC').paginate(:per_page => 5, :page => params[:page])
 
-    @user_friendships = current_user.user_friendships.all
+      #@list = @user.paginate(per_page: 2,:page => params[:page],
+      #                      :order => 'created_at DESC')
+     @user_friendships = current_user.user_friendships.all
+      respond_to do |format|
+        format.html # index.html.erb
+        format.json { render json: @user }
+        format.js
 
+      end
   end
 
   def new
@@ -43,8 +48,6 @@ class UsersController < ApplicationController
       redirect_to :back
     end
   end
-
-
 end
 
 

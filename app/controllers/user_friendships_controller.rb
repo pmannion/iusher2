@@ -3,17 +3,19 @@ class UserFriendshipsController < ApplicationController
   respond_to :html, :json
 
   def index
+    if current_user
     @user_friendships = current_user.user_friendships.paginate(per_page:5,
                                                                page: params[:page],
                                                                order: 'created_at DESC')
+    else
 
-
+    end
   end
 
   def accept
     @user_friendship = current_user.user_friendships.find(params[:id])
     if @user_friendship.accept!
-      flash[:success] = "#{@user_friendship.friend.first_name} is now a contact"
+      flash.now[:success] = "#{@user_friendship.friend.first_name} is now a contact"
     else
       flash[:error] = 'That contact could not be created'
     end
@@ -32,7 +34,7 @@ class UserFriendshipsController < ApplicationController
       raise ActiveRecord::RecordNotFound if @friend.nil?
       @user_friendship = current_user.user_friendships.new(friend: @friend)
     else
-      flash[:notice] = 'friend required'
+      flash.now[:notice] = 'friend required'
     end
   rescue ActiveRecord::RecordNotFound
     render file: 'public/404', status: :not_found

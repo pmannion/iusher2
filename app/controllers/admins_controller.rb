@@ -6,8 +6,9 @@ class AdminsController < ApplicationController
   def show
   begin
     @admins = Admin.find(params[:id])
-    @adminpost = Post.all
+    @adminpost =Post.all
     @user = User.all
+
   rescue ActiveRecord::RecordNotFound
     logger.error "Attempt to access invalid action #{params[:id]}"
     flash[:notice] = "invalid action"
@@ -26,4 +27,15 @@ class AdminsController < ApplicationController
     end
   end
 
+  def edit
+    @admin = Admin.find(params[:id])
+  end
+
+  def update
+    @admin = Admin.find(params[:id])
+     if @admin.update_attributes(params[:admin])
+       flash[:success] = "Your details have been updated"
+       redirect_to :back
+     end
+  end
 end

@@ -1,6 +1,6 @@
-
+<% if current_admin && admin_signed_in? %>
 <div id="center">
-  <% if @admin %>
+
 <h1>Listing complaints</h1>
 <div id ="complaint-list">
 <table>
@@ -53,11 +53,19 @@
   </div>
 <br />
 
-  <% else  %>
-    <h3>Nothing to see here !</h3>
+<% end %>
+
+  <% if !current_admin  %>
+    <div id="center">
+      <p id="intro1"><span>Whoops !</span><br/>
+       Nothing to see<br/> on this page</p>
+      <p id="subintro1">Get me<br/>Out of here</p>
+      <%= link_to "Home", root_path, class: "green button1" %>
       <!--use this link to return to the current users profile path-->
+    </div>
 
   <% end %>
+</div>
 
 
- </div>
+

@@ -1,4 +1,4 @@
-
+  <% if current_user %>
 <div class="page-header">
 
   <h4 class="buddy">Buddy List  (<%= @user_friendships.size %>)</h4>
@@ -18,7 +18,7 @@
         <strong><%= friend.full_name %></strong><br />
         <% if friendship.pending? %>
             <em id="orange-status">Your buddy is yet to accept.</em><br/>
-            <%= link_to "Delete", edit_user_friendship_path(friendship),class: 'btn btn-danger' %>
+            <%= link_to "Delete Request", edit_user_friendship_path(friendship),class: 'btn btn-danger' %>
         <% end %>
         <% if friendship.requested? %>
             <em>Wants to be your buddy.</em><br/>
@@ -46,3 +46,20 @@
   <div id="paginate">
     <%= will_paginate @user_friendships %>
   </div>
+
+  <% else if !current_user  %>
+          <div id="center">
+            <p id="intro1"><span>Whoops !</span><br/>
+              Nothing to see<br/> on this page</p>
+            <p id="subintro1">Get me<br/>Out of here</p>
+            <%= link_to "Home", root_path, class: "green button1" %>
+            <!--use this link to return to the current users profile path-->
+          </div>
+
+      <% end %>
+  <% end %>
+
+
+
+
+

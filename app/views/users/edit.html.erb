@@ -1,6 +1,5 @@
-
-
 <h1>Edit Details</h1>
+<div id="center">
 <div id="edit-complaint">
 
   <%= form_for (@user), :html => { :multipart => true } do |f| %>
@@ -37,10 +36,8 @@
       <%= f.label :password %><br/>
       <%= f.password_field :password %><br />
 
-
-
-
       <%= f.submit %>
       <%= link_to 'Back', profile_path(@user.profile_name) %>
   <% end %>
+</div>
 </div>

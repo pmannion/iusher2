@@ -8,10 +8,7 @@ class PostsController < ApplicationController
                           page: params[:per_page],
                           order: 'created_at DESC')
 
-
-
-
-    respond_to do |format|
+      respond_to do |format|
       format.html # index.html.erb
       format.json { render json: @posts }
     end
@@ -37,9 +34,12 @@ end
   # GET /posts/new
   # GET /posts/new.json
   def new
+  @user = User.find_by_profile_name(params[:id])
+  unless @user
     @post = Post.new
-
-    respond_to do |format|
+    false
+  end
+  respond_to do |format|
       format.html # new.html.erb
       format.json { render json: @post }
     end

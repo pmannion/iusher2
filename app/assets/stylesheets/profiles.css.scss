@@ -8,15 +8,39 @@
 #profile-info{
 height:200px;
 width:800px;
-border-top:7px solid gray;
-border-left: 6px solid #2f4f4f;
-border-right: 6px solid #2f4f4f;
-
- margin-left:20%;
- margin-top:5%;
-background-image:url("dark-texture.jpg")
+border-top:8px solid cadetblue;
+border-left: 6px solid cadetblue;
+border-right: 6px solid cadetblue;
+margin-left:20%;
+margin-top:5%;
+background-image:url("bluewhitedot.jpg")
 
 }
+
+#personal-info {
+  position:absolute;
+  top:23%;
+  left:25%;
+  width:20%;
+  font-family:tahoma;
+  font-size: 1.2em;
+  color:#000000;
+  padding-top:0.5em;
+  padding-right:1em;
+  padding-bottom:0.5em;
+  padding-left:1em;
+  border:0.5em solid white;
+  border-radius:1em;
+  background-color: ghostwhite;
+
+}
+
+#info-text{
+  position:absolute;
+  margin-top:-28%;
+  margin-left:30%;
+}
+
 
 #profile-bar{
   position:absolute;
@@ -24,8 +48,6 @@ background-image:url("dark-texture.jpg")
   width:850px;
   margin-left:18%;
   margin-top:1.5%;
-
-
 }
 
 li{
@@ -84,8 +106,6 @@ li{
   float: left;
   z-index: 10;
   text-align: center;
-
-
 }
 
 #friend-container{
@@ -107,8 +127,9 @@ li{
   font-weight: bold;
   font-size: 1.3em;
   font-family: calibri;
-  margin-left:28%;
+  margin-left:27%;
   margin-top:1.5%;
+  z-index: 5;
 }
 
 #post-count{
@@ -119,6 +140,7 @@ color:white;
 font-weight: bold;
 font-size: 1.3em;
 font-family: calibri;
+z-index: 5;
 }
 
  #buddy-size{
@@ -129,6 +151,7 @@ font-family: calibri;
    font-size: 1.3em;
    font-family: calibri;
    margin-top:1.5%;
+   z-index: 5;
 
 }
 

@@ -1,0 +1,11 @@
+<div id="user-container">
+  <% @user.each do |user| %>
+      <div id="allusers">
+        <%= gravatar_for user, size: "60x60" %><br/>
+        <%= link_to user.full_name , profile_path(user.profile_name), id: 'bluestatus' %>
+      </div>
+  <% end %>
+  <div id="paginateusers">
+    <%= will_paginate @user %>
+  </div>
+</div>

@@ -4,8 +4,9 @@ Usher3::Application.routes.draw do
 
     resources :users, only:[:index, :create, :new, :edit, :destroy, :update]
     resources :complaints
-    resources :posts do
+    resources :posts, except: [:show, :edit] do
       member { post :vote}
+      resources :comments
     end
 
     resources :profiles

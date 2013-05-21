@@ -48,5 +48,33 @@ a:link{
   font-size:1.3em;
   font-weight:bold;
   color:cadetblue;
+}
 
+#logo-size{
+ margin-right:10%
+}
+
+#personal-info1 {
+  position:absolute;
+  top:23%;
+  left:25%;
+  width:25%;
+  height:15%;
+  font-family:tahoma;
+  font-size: 1.2em;
+  color:#000000;
+  padding-top:0.5em;
+  padding-right:1em;
+  padding-bottom:0.5em;
+  padding-left:1em;
+  border:0.5em solid white;
+  border-radius:1em;
+  background-color: ghostwhite;
+
+}
+
+#info-text1{
+  position:absolute;
+  margin-top:-10%;
+  margin-left:25%;
 }

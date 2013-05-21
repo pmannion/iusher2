@@ -1,35 +1,14 @@
-
+<div id="center">
   <div id="search">
     <h4>Find a Buddy !</h4>
-      <%= form_tag users_path, :method => 'get', id:'users_search' do %>
+      <%= form_tag users_path, :method => 'get', :id =>'users_search' do %>
         <%= text_field_tag :search_query,
                            params[:search_query] %>
         <%= submit_tag 'Search', :name => nil , class: 'btn btn-info' %>
     </div>
-
-  <div id="all-users">
-  <% @user.each do |user| %>
-      <div id="users-index">
-        <div class="status">
-          <div class="row">
-            <div class="span7">
-              <b><%= user.first_name %></b>
-              <b><%= user.last_name %></b>
-               <div class="meta">
-                <%= link_to 'Go to Buddy', profile_path(user.profile_name) , class: "btn btn-info" %>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-
-   <% end %>
-  </div>
-
-  <div id="paginate">
-   <%= will_paginate @user %>
- </div>
-
-
-
 <% end %>
+
+
+ <div id="list"><%= render 'users/users' %></div>
+
+</div>

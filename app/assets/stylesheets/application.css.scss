@@ -16,17 +16,21 @@ html,body{
   width:100%;
   height: 100%;
   font-size:16px;
-  margin:0;
+  top:0;
   padding:0;
 
+
 }
-
-
-
+#push-down{
+  position:absolute;
+  margin-top:2%;
+  width:60%
+}
 #header{
   background-image:url("greygrad.jpg");
   height:150px;
 }
+
 
 
 
@@ -56,7 +60,6 @@ html,body{
     background-color:cadetblue;
     height:60px;
     border-bottom:10px solid #d3d3d3;
-
 }
 
 #users-index{
@@ -72,19 +75,17 @@ html,body{
 
 
 #nav li {
+    position:relative;
     display: inline;
+    padding:0.5%;
 
-
-}
+   }
 
 #nav li a {
     font-size:5px;
     text-decoration: none;
-    padding: 10px;
-
 
 }
-
 
 #intro {
     position:absolute;
@@ -93,6 +94,23 @@ html,body{
     font-family: 'BebasNeueRegular',sans-serif;
     font-size: 3.2em;
     line-height: 1;
+}
+
+#intro1 {
+  position:absolute;
+  margin-left:10%;
+  margin-top: 10%;
+  color: #000;
+  font-family: 'BebasNeueRegular',sans-serif;
+  font-size: 3.2em;
+  line-height: 1;
+}
+
+#intro1 span{
+  color: cadetblue;
+  font-family: 'BebasNeueRegular',sans-serif;
+  font-size: 1.4em;
+  line-height: .8;
 }
 
 #subintro {
@@ -104,167 +122,21 @@ html,body{
     font-size: 1.9em;
     line-height: .8;
 }
-//posts scrollbar------------------------------
 
-
-
-//styles for info pages ----------------------------------
-#fact1 {
-    position:absolute;;
-    background-color: lightblue;
-    -webkit-border-radius:10px;
-    color:white;
-    font-size:1.5em;
-    font-family:"calibri";
-    padding:20px;
-    top: 20px;
-    right: 750px;
-    bottom: 490px;
-    left: 100px;
-}
-
-#fact2{
-    position:absolute;;
-    background-color: lightblue;
-    -webkit-border-radius:10px;
-    color:white;
-    font-size:1.5em;
-    font-family:"calibri";
-    padding:20px;
-    top: 170px;
-    right: 300px;
-    bottom: 390px;
-    left: 400px;
-
+#subintro1 {
+  position:absolute;
+  margin-top:20%;
+  margin-left:10%;
+  color: cadetblue;
+  font-family: 'BebasNeueRegular',sans-serif;
+  font-size: 1.9em;
+  line-height: .8;
 }
 
 
-
-#cover{
-    position: absolute;
-    border: 2px solid gray;
-    background-color:greenyellow;
-    -webkit-border-radius: 10px;
-    top: 20px;
-    right: 750px;
-    bottom: 500px;
-    left: 100px;
-    z-index:50000;
-    cursor:pointer;
-
-}
-
-#cover2 {
-    position: absolute;
-    border: 2px solid gray;
-    background-color:greenyellow;
-    -webkit-border-radius: 10px;
-    top: 170px;
-    right: 300px;
-    bottom: 390px;
-    left: 400px;
-    z-index:50000;
-    cursor:pointer;
-}
-
-.covertext {
-    postion:absolute;
-    margin-top: 50px;
-    margin-left:10px;
-    z-index:50002;
-    color: white;
-    font-family: Arial;
-    font-size: 1.5em;
-    border-radius: 5px;
-
-}
-
-
-#fact1 {
-    position:absolute;;
-    background-color: lightblue;
-    -webkit-border-radius:10px;
-    color:white;
-    font-size:1.5em;
-    font-family:"calibri";
-    padding:20px;
-    top: 20px;
-    right: 750px;
-    bottom: 490px;
-    left: 100px;
-}
-
-#fact2{
-    position:absolute;;
-    background-color: lightblue;
-    -webkit-border-radius:10px;
-    color:white;
-    font-size:1.5em;
-    font-family:"calibri";
-    padding:20px;
-    top: 170px;
-    right: 300px;
-    bottom: 380px;
-    left: 400px;
-
-}
-
-#fact3 {
-    position:absolute;;
-    background-color: lightblue;
-    -webkit-border-radius:10px;
-    color:white;
-    font-size:1.5em;
-    font-family:"calibri";
-    padding:20px;
-    top: 350px;
-    right: 750px;
-    bottom: 140px;
-    left: 100px;
-}
-
-#cover3 {
-    position: absolute;
-    border: 2px solid gray;
-    background-color:greenyellow;
-    -webkit-border-radius: 10px;
-    top: 350px;
-    right: 750px;
-    bottom: 150px;
-    left: 100px;
-    z-index:50000;
-    cursor:pointer;
-}
-
-#fact4 {
-    position:absolute;;
-    background-color: lightblue;
-    -webkit-border-radius:10px;
-    color:white;
-    font-size:1.5em;
-    font-family:"calibri";
-    padding:20px;
-    top: 350px;
-    right: 50px;
-    bottom: 90px;
-    left: 480px;
-}
-
-#cover4 {
-    position: absolute;
-    border: 2px solid gray;
-    background-color:lightblue;
-    -webkit-border-radius: 10px;
-    top: 350px;
-    right: 50px;
-    bottom: 100px;
-    left: 480px;
-    z-index:50000;
-    cursor:pointer;
-}
 
 #footer {
-  position:absolute;
+  position:relative;
   background-image:url("greygrad.jpg");
   height:100px;
   color:white;
@@ -299,6 +171,7 @@ html,body{
     color: white;
     font-size: 1.5em;
 }
+
 
 
 

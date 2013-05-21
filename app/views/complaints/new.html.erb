@@ -1,6 +1,6 @@
 
 
-
+  <% if current_user %>
   <div id="complaint-form">
   <h3>Report incident</h3>
 
@@ -9,3 +9,18 @@
 <%= link_to 'Back', complaints_path %>
 
   </div>
+
+
+  <% end %>
+
+  <% if !current_user  %>
+      <div id="center">
+        <p id="intro1"><span>Whoops !</span><br/>
+          Nothing to see<br/> on this page</p>
+        <p id="subintro1">Get me<br/>Out of here</p>
+        <%= link_to "Home", root_path, class: "green button1" %>
+        <!--use this link to return to the current users profile path-->
+      </div>
+
+  <% end %>
+

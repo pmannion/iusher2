@@ -1,3 +1,51 @@
 // Place all the styles related to the InfoPages controller here.
 // They will automatically be included in application.css.scss.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+#disturbances{
+  position:absolute;
+  margin-top:0%;
+  margin-left:40%;
+
+  padding-left:5%;
+
+}
+
+hr{
+  width:40%;
+
+}
+
+#about-info{
+  position:relative;
+  margin-top:10%;
+  margin-left:10%;
+
+}
+
+.about{
+  position:relative;
+
+  color: #000;
+  font-family: 'BebasNeueRegular',sans-serif;
+  font-size: 1.3em;
+  line-height: 1.5;
+}
+
+#arrow{
+  position:absolute;
+  margin-left:60%;
+  margin-top:15%;
+
+}
+
+#guide{
+  position:absolute;
+  font-size:4em;
+  font-family:"tahoma";
+  margin-top:-7%;
+  margin-left:25%;
+  width:80%;
+  color:#2f4f4f;
+
+}

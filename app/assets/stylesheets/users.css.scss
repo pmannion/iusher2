@@ -35,26 +35,23 @@ p {
 }
 
 
-#nav li {
-  display: inline;
-}
+
 
 #nav li a {
   position: relative;
-  left: 60px;
+
+  top:15%;
+  left: 5%;
   font-family: "calibri";
-  font-size:18px;
+  font-size:1.4em;
   text-decoration: none;
   color: white;
+  z-index: 20;
 }
 
-#nav li a:hover {
-
-  margin-top:-2px;
-  padding-bottom:12px;
-}
 
 h2 {
+
   font-family: moiser;
   font-size: 30px;
   color:cadetblue;
@@ -64,25 +61,10 @@ h2 {
 }
 
 h3 {
+  position:relative;
   color: cadetblue;
   top: 10px;
 }
-
-
-
-
-#personal-info {
-  position:absolute;
-  top:15px;
-  right:365px;
-  left:140px;
-  font-family:arial;
-  font-size: 0.75em;
-  font-weight: lighter;
-
-}
-
-
 
 .left-60 {
   position:absolute;
@@ -96,15 +78,10 @@ h3 {
 
 }
 
-#post-seperate{
-
-
-}
-
 #search{
   position: relative;
-  margin-top:30px;
-  margin-left: 780px;
+  margin-top:1%;
+  margin-left: 71%;
   z-index:10;
 }
 
@@ -166,8 +143,8 @@ h3 {
 
 #connect {
   position:absolute;
-  margin-top:-6%;
-  margin-left:23.1%;
+  margin-top:-4%;
+  margin-left:26.1%;
   color: white;
 }
 
@@ -189,10 +166,31 @@ h3 {
   width:300px;
   text-decoration: none;
   padding:10px 15px 10px 15px;
-
-
 }
 
+
+@-webkit-keyframes greenPulse {
+  from { background-color: cadetblue; -webkit-box-shadow: 0 0 9px #333; }
+  50% { background-color: lightblue; -webkit-box-shadow: 0 0 18px #333; }
+  to { background-color: cornflowerblue; -webkit-box-shadow: 0 0 9px #333; }
+}
+.green.button1 {
+  position:absolute;
+  -webkit-animation-name: greenPulse;
+  -webkit-animation-duration: 2s;
+  -webkit-animation-iteration-count: infinite;
+  -webkit-border-radius: 8px;
+  background-color: cadetblue;
+  font-size: 1.9em ;
+  font-family: arial;
+  color:white;
+  padding: 3px;
+  width:18%;
+  margin-top:25%;
+  margin-left:10%;
+  text-decoration: none;
+  padding:10px 15px 10px 15px;
+}
 #paginate {
   position: relative;
   left: 270px;
@@ -201,8 +199,17 @@ h3 {
   margin-top:8%;
 }
 
+#paginateusers {
+  position: absolute;
+  margin-top:40%;
+  margin-left: 40%;
+  color: darkblue;
+  width:80%;
+
+}
+
 a:link, a:hover, a:visited{
-  color:white
+  color:white;
 }
 
 .tweet span {
@@ -230,6 +237,32 @@ a:link, a:hover, a:visited{
 #video1{
   max-width: 100%;
 }
+
+
+#allusers{
+  position:relative;
+  margin-top: 15px;
+  margin-left:5%;
+  left:10px;
+  float: left;
+  z-index: 10;
+  text-align: center;
+}
+
+#user-container{
+  position: absolute;
+  top:20%;
+  margin-left:10%;
+  max-height: 100%;
+  width: 80%;
+  height:75%;
+  border-top: 8px solid dodgerblue;
+  border-right: 6px solid dodgerblue;
+  border-bottom: 8px solid dodgerblue;
+  border-left: 6px solid  dodgerblue;
+
+}
+
 
 
 

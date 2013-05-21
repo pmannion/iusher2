@@ -1,4 +1,5 @@
-<div id="plain-wrapper">
+<% if current_admin %>
+<div id="center">
   <div id="post">
 <% @post.each do |post| %>
 
@@ -15,7 +16,6 @@
                  <%= link_to "up", vote_post_path(@post, type: "up"), method: "post"%>
                 <%= link_to "down", vote_post_path(@post, type: "down"), method: "post"%>
                 <%= link_to 'Show', post %>
-                 <%= link_to 'Edit', edit_post_path(post) %>
                 <%= link_to 'Destroy', post, method: :delete, data: { confirm: 'Are you sure?' } %>
               </span>
             </div>
@@ -27,3 +27,15 @@
    </div>
   <%= will_paginate @post %>
 </div>
+<% end %>
+
+<% if !current_admin  %>
+    <div id="center">
+      <p id="intro1"><span>Whoops !</span><br/>
+        Nothing to see<br/> on this page</p>
+      <p id="subintro1">Get me<br/>Out of here</p>
+      <%= link_to "Home", root_path, class: "green button1" %>
+      <!--use this link to return to the current users profile path-->
+    </div>
+
+<% end %>

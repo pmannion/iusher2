@@ -1,7 +1,7 @@
 
 <div id="center">
   <div id= 'profile-info'>
-
+        <%= link_to "edit profile", edit_admin_path %>
         <div id="pic-border-green">
           <div id="pic-green">
 
@@ -9,12 +9,15 @@
         </div>
         </div>
 
-<div id="personal-info">
-  <h3><%= @admins.title %></h3>
+<div id="personal-info1">
+  <%= pic_for @admins %>
+  <div id="info-text1">
+  <h3><%= @admins.title %></h3><br/>
   Company: <%= @admins.company %><br/>
   Branch:  <%= @admins.branch %><br/>
   User Type: <%= @admins.user_type %><br/>
   Member Since:  <%= @admins.created_at.strftime("%d %b. %Y") %><br/>
+  </div>
 </div>
 
 
@@ -23,32 +26,11 @@
     <ul>
       <li class="profile-hover1"><%= image_tag("rep.png") %></li>
       <li class="profile-hover2"><%= image_tag("postcount.png") %></li>
-      <li class="profile-hover3"><%= link_to image_tag("buddies.png"),user_friendships_path %></li>
-      <li class="profile-hover4"><%= link_to image_tag("complaint.png"), new_complaint_path %></li>
-
+      <li class="profile-hover3"><%= link_to image_tag("complaints.png"), complaints_path %></li>
+      <li class="profile-hover5"><%= link_to image_tag("newpost.png") %>
     </ul>
   </div>
   <!--  ----------------------------------------------   -->
-
-
-  <div id="connectad">
-
-    <p id="like">Like</p>
-
-  </div>
-
-
-
-  <div id="userposts">
-    <%= link_to 'New Post', new_post_path, class: "btn btn-success" %>
-    <%= link_to 'View Complaints', complaints_path, class: "btn btn-success" %>
-  </div>
-
-  <div id="like-list">
-    <p><b>Likes</b></p>
-  </div>
-
-
 
   <div id="talking">
     <p><b>Comments</b></p>
