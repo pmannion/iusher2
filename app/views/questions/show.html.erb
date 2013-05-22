@@ -1,0 +1,26 @@
+<div id="center">
+  <div id="show-question">
+  <p>
+    <b>From:</b><br/>
+    <%= @question.name %>
+  </p>
+
+  <p>
+    <b>Email:</b><br/>
+    <%= @question.email %>
+  </p>
+
+  <p>
+    <b>Category:</b><br/>
+    <%= @question.category %>
+  </p>
+
+  <p>
+    <b>text:</b><br/>
+    <%= @question.body %>
+  </p>
+
+  <%= link_to "Back to Messages", questions_path, class: 'btn btn-success' %>
+  </div>
+
+</div>

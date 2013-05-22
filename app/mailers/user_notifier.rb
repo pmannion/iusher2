@@ -21,6 +21,7 @@ class UserNotifier < ActionMailer::Base
     mail to: @user.email,
          subject: "#{@friend.first_name} is now an iUsher contact"
 
+
   end
 
 

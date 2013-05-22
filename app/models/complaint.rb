@@ -7,6 +7,7 @@ class Complaint < ActiveRecord::Base
   belongs_to :user
   belongs_to :admin
 
+
   STATUS_TYPES = ["confirmed", "pending"]
 
 

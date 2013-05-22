@@ -45,7 +45,7 @@ class UsersController < ApplicationController
     if
     @user.update_attributes(params[:user])
       flash[:success] = "You have updated your details"
-      redirect_to :back
+      redirect_to profile_path(current_user.profile_name)
     end
   end
 end

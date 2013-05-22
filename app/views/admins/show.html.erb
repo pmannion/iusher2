@@ -41,30 +41,38 @@
   <div id="talking">
     <p><b>Comments</b></p>
   </div>
-  <div id="post">
-  <% @adminpost.each do |post| %>
-        <div id="post-seperate">
-          <%= pic_for @admins, size: "60x50" %>
-          <%= post.content %>
-          <div class="meta">
 
-                <span class='admin'>
-                  <div id="thumbs">
-                    <% if current_user %>
+  <div id="latest-film">
+    <p><b>This weeks top movie</b></p>
+  </div>
+
+  <div id="video-border1">
+    <%= video_tag ('hangover.mp4'),id:'video1', :size => "300x260", controls: true %><br/>
+  </div>
+
+
+  <div id="post">
+    <% @adminpost.each do |post| %>
+      <div id="post-seperate">
+        <%= pic_for @admins, size: "60x50" %>
+          <div id="profile-post">
+            <%= post.content %>
+          </div>
+            <div class="meta">
+              <span class='admin'>
+                <div id="thumbs">
+                  <% if current_user %>
                     <%= link_to image_tag("thumbup1.png"), vote_post_path(post, type: "up"), method: "post", id: "vote-up" %>
                     <%= link_to image_tag("thumdown1.png"), vote_post_path(post, type: "down"), method: "post", id: "vote-down" %>
                     <% end %>
                     <%= time_ago_in_words(post.created_at) + " " + "ago" %>
                   </div>
-                  <%= pluralize post.reputation_for(:votes).to_i, "votes" %>
-
-                  <%= link_to 'Delete', post, method: :delete, data: { confirm: 'Are you sure?' } %>
-                 </span>
+                    <%= pluralize post.reputation_for(:votes).to_i, "votes" %>
+                      <%= link_to 'Delete', post, method: :delete, data: { confirm: 'Are you sure?' } %>
+                    </span>
+                  </div>
+               </div>
+            <% end %>
           </div>
-        </div>
-
-
-  <% end %>
-    </div>
-</div>
+       </div>
 

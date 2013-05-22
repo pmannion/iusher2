@@ -1,14 +1,11 @@
-<% if current_user  %>
+<% if @user  %>
 <div id="center">
 <div id= 'profile-info'>
 
 </div>
 
-
 <!--button to connect to user friendships,if at other users, if at own profile no button-->
    <%= render 'profiles/connect' %>
-
-
 
    <!-- statistics belonging to graphics and links for sub menu bar -->
    <div id="reputation">
@@ -43,13 +40,8 @@
    <%= render 'profiles/buddies' %>
 
 <!-----      ----->
-  <div id= "cinema-container">
-    <div id="allcinemas">
-      <% @admin.each do |admins| %>
-        <%= link_to admins.branch, admin_path(admins) %>
-      <% end %>
-     </div>
-  </div>
+
+<% else %>
 <% end %>
 </div>
 

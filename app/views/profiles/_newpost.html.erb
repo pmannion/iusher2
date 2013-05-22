@@ -1,11 +1,6 @@
 <%= form_for(:posts, url: posts_path, method: :post) do |f| %>
-
-    <div class="field">
-
-      <%= f.text_area :content %>
-
-
-    </div>
+  <div class="field">
+    <%= f.text_area :content %>
+  </div>
     <%= f.submit "Submit New Post", class: "post button", remote: true %>
-
 <% end %>

@@ -1,11 +1,13 @@
+<!-- this page only in use if turbolinks is turned off -->
+
 <% if current_user %>
-<div id="plain-wrapper">
+<div id="center">
   <%= form_for @user_friendship, method: :post do |form| %>
-    <div class="form form-actions">
+     <div id="push-down">
       <%= form.hidden_field :friend_id, value: @friend.profile_name %>
       <%= submit_tag "Connect Me !", class: "btn btn-primary" %>
       <%= link_to "Cancel", current_user, class: "btn btn-warning" %>
-    </div>
+     </div>
 <% end %>
 </div>
 
@@ -17,7 +19,6 @@
           <%= link_to "Home", root_path, class: "green button1" %>
           <!--use this link to return to the current users profile path-->
         </div>
-
     <% end %>
 <% end %>
 

@@ -1,4 +1,5 @@
 <!--button to connect to user friendships,if at other users, if at own profile no button-->
+
 <div id="connect">
   <% if profile_path(@current_user.profile_name) == profile_path %>
     <%= link_to 'Edit Profile', edit_user_path, class: 'btn btn-success' %>

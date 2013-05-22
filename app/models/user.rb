@@ -20,7 +20,8 @@ class User < ActiveRecord::Base
 
   #------- callbacks ----------#
   before_save { |user| user.email = email.downcase }
-  before_save :create_remember_token
+  before_create :create_remember_token
+
 
   #-------- validations --------#
   validates :first_name, presence: true, length: {maximum: 30}, :on => :create

@@ -1,0 +1,33 @@
+<div id="center">
+  <% if current_user.profile_name == "paul" %>
+  <h2>My Inquiries</h2>
+  <div id ="complaint-list">
+    <table>
+      <tr>
+        <th>Qustion ID</th>
+        <th>Name</th>
+        <th>Email</th>
+        <th>Category</th>
+      </tr>
+
+<tr class= "<%= cycle('list_line_odd', 'list_line_even') %>">
+ <% @question.each do |question| %>
+  <td><%= question.id %></td>
+  <td><%= question.name %></td>
+  <td><%= question.email %></td>
+  <td><%= question.category %></td>
+  <td><%= link_to 'Show', question, id: 'bluestatus' %></td>
+  <td><%= link_to 'Destroy', question, method: :delete, data: { confirm: 'Are you sure?' }, id: 'red-status' %></td>
+ </tr>
+<% end %>
+</table>
+</div>
+ <% else %>
+
+        <p id="intro1"><span>Whoops !</span><br/>
+          Nothing to see<br/> on this page</p>
+        <p id="subintro1">Get me<br/>Out of here</p>
+        <%= link_to "Home", root_path, class: "green button1" %>
+
+  <% end %>
+</div>

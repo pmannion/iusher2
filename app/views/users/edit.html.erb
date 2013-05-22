@@ -1,4 +1,4 @@
-<h1>Edit Details</h1>
+<h1>Edit My Details</h1>
 <div id="center">
 <div id="edit-complaint">
 
@@ -14,13 +14,15 @@
             </ul>
           </div>
       <% end %>
-      <p>Upload Avatar</p>
-      <hr/>
-      <%= f.file_field :pic, as: :file %>
+
+      <p>Current Avatar</p>
       <% if f.object.pic? %>
          <%= image_tag f.object.pic.url %>
       <% end %>
+      <p></p>
 
+      <%= f.file_field :pic, as: :file %>
+      <hr/>
       <%= f.label :first_name %><br/>
       <%= f.text_field :first_name %> <br />
 
@@ -35,9 +37,9 @@
 
       <%= f.label :password %><br/>
       <%= f.password_field :password %><br />
-
-      <%= f.submit %>
-      <%= link_to 'Back', profile_path(@user.profile_name) %>
+      <br/>
+      <%= f.submit "Update Details", class:"green button" %><br/><br/>
+      <%= link_to 'Back to My Profile', profile_path(@user.profile_name), class: 'btn btn-success' %>
   <% end %>
 </div>
 </div>

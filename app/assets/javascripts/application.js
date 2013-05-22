@@ -14,7 +14,7 @@
 //= require jquery_ujs
 //= require jquery-ui.min
 //= require js-routes
-
+//= require turbolinks
 //= require_tree .
 
 

@@ -5,7 +5,6 @@
 
 #post-seperate{
   width: 350px;
-
   margin:40px 300px 20px 350px;
 }
 
@@ -30,12 +29,17 @@ a:link{
 
 }
 
-#like{
-  position:relative;
-  margin: -20px 620px 5px 45px;
-  font-size:1.3em;
-  font-weight:bold;
-  color:cadetblue;
+#latest-film {
+  position: absolute;
+  width:350px;
+  margin-top:7%;
+  margin-left:20%;
+  padding-top:5px;
+  padding-left:10px;
+  border: 1px solid #d3d3d3;
+  -webkit-border-radius:5px;
+  background-color: #f5f5f5;
+  color: #2f4f4f;
 }
 
 #logo-size{
@@ -66,3 +70,18 @@ a:link{
   margin-top:-25%;
   margin-left:30%;
 }
+
+
+#video-border1{
+  position:absolute;
+  margin-top:10%;
+  margin-left:20.2%;
+  padding-left:1%;
+  padding-right:1%;
+  padding-bottom:1%;
+  border:1em solid darkorange;
+  width:20%;
+  background-image: url('orangegrad.png');
+}
+
+

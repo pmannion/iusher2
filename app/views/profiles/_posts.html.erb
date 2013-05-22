@@ -2,7 +2,9 @@
   <% @post.each do |post| %>
     <div id="post-seperate">
       <%=  gravatar_for @user,:size => "60x60" %>
-      <%= post.content %>
+      <div id="profile-post">
+        <%= post.content %>
+       </div>
         <div class="meta">
           <span class='admin'>
             <div id="thumbs">
@@ -20,3 +22,5 @@
       </div>
   <% end %>
 </div>
+
+

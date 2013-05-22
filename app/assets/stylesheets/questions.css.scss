@@ -1,0 +1,46 @@
+// Place all the styles related to the questions controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+#question-container {
+  position: absolute;
+  width:25%;
+  top: 24%;
+  bottom:0%;
+  left: 40%;
+  font-family:helvetica;
+  font-size: 15px;
+  padding-top:35px;
+
+}
+
+.text-question{
+  width:85%;
+  height:5%;
+  margin-top:-53%;
+  margin-left:75%;
+  border-radius:2em;
+  padding-left:10%;
+  padding-top:5%;
+  border:0.5em solid cadetblue;
+}
+
+#question-button{
+  position:absolute;
+  margin-left:85%;
+}
+
+#show-question{
+  position:absolute;
+  font-size:4em;
+  color:dimgray;
+  height:60%;
+  width:20%;
+  margin-top:5%;
+  margin-left:15%;
+  border:0.2em solid cadetblue;
+  padding:2%;
+
+}
+
+

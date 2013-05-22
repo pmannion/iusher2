@@ -1,15 +1,17 @@
 Usher3::Application.routes.draw do
 
-    resources :admins
+  resources :questions
+  match '/contact', to: 'questions#new'
+  resources :admins
 
-    resources :users, only:[:index, :create, :new, :edit, :destroy, :update]
-    resources :complaints
-    resources :posts, except: [:show, :edit] do
-      member { post :vote}
+  resources :users, only:[:index, :create, :new, :edit, :destroy, :update]
+  resources :complaints
+  resources :posts, except: [:show, :edit] do
+    member { post :vote}
       resources :comments
     end
 
-    resources :profiles
+  resources :profiles
 
   resources :user_friendships do
     member do

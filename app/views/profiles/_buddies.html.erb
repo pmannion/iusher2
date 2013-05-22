@@ -1,4 +1,5 @@
 <!-- all users accepted friends, conditional to show the friends list only on the logged in users profile page -->
+
 <% if profile_path(@current_user.profile_name) == profile_path %>
     <div id="friend-container">
       <% @profile_friendships.each do |friendship| %>
