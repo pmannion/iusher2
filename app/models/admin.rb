@@ -6,7 +6,7 @@ class Admin < ActiveRecord::Base
 
   # ----------------- relationships  ----------------#
   has_secure_password
-  has_many :posts
+  has_many :posts, dependent: :destroy
   has_many :complaints
   has_many :users
   has_attached_file :pic, default_url: 'defaultpic.PNG'
@@ -30,6 +30,16 @@ class Admin < ActiveRecord::Base
   def title
     company + " - " +branch
   end
+
+  def self.search(search_query)
+    if search_query
+      where (['branch LIKE ? OR company LIKE ?', "%#{search_query}%",
+              "%#{search_query}%"])
+    else
+      scoped
+    end
+  end
+
 
   private
 

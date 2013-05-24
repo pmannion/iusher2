@@ -3,19 +3,19 @@ class User < ActiveRecord::Base
 
 #--------- relationships  ----------#
   belongs_to :admins
-  has_many :posts
+  has_many :posts, dependent: :destroy
   has_many :complaints
-  has_many :comments
-  has_attached_file :pic,:default_url => 'defaultpic.PNG'
-  has_many :user_friendships
+  has_many :comments, dependent: :destroy
+  has_attached_file :pic,:default_url => 'defaultpic.PNG', dependent: :destroy
+  has_many :user_friendships, dependent: :destroy
   has_many :friends, through: :user_friendships,
-           conditions: { user_friendships: { state: 'accepted' } }
+           conditions: { user_friendships: { state: 'accepted' } }, dependent: :destroy
 
   has_many :pending_user_friendships, class_name: 'UserFriendship',
            foreign_key: :user_id,
-           conditions: { state: 'pending' }
-  has_many :pending_friends, through: :pending_user_friendships, source: :friend
-  has_reputation :votes, source: {reputation: :votes, of: :posts}, aggregated_by: :sum
+           conditions: { state: 'pending' }, dependent: :destroy
+  has_many :pending_friends, through: :pending_user_friendships, source: :friend, dependent: :destroy
+  has_reputation :votes, source: {reputation: :votes, of: :posts}, aggregated_by: :sum, dependent: :destroy
   has_secure_password
 
   #------- callbacks ----------#
@@ -42,7 +42,6 @@ class User < ActiveRecord::Base
     if search_query
       where (['first_name LIKE ? OR last_name LIKE ? OR profile_name LIKE ?', "%#{search_query}%",
                                  "%#{search_query}%", "%#{search_query}%"])
-
     else
       scoped
     end

@@ -53,7 +53,7 @@ end
 
 Given /^I update my user view to include the attachment$/ do
   steps %{
-    Given I overwrite "app/views/users/show.html.erb" with:
+    Given I overwrite "app/views/users/index.html.erb" with:
       """
       <p>Name: <%= @user.name %></p>
       <p>Attachment: <%= image_tag @user.attachment.url %></p>

@@ -1,13 +1,16 @@
 <!--button to connect to user friendships,if at other users, if at own profile no button-->
-
+<% if current_user %>
 <div id="connect">
   <% if profile_path(@current_user.profile_name) == profile_path %>
     <%= link_to 'Edit Profile', edit_user_path, class: 'btn btn-success' %>
       <% else if @current_user.friends.include?(@user) %>
          <%= link_to "Connected ", "#", class: "btn btn-warning" %>
       <% else %>
-         <%= link_to "Add Buddy ", new_user_friendship_path(friend_id: @user.profile_name) , class: "btn btn-info",
+         <%= link_to "Add Buddy ", new_user_friendship_path(friend_id: @user.profile_name) , class: 'connectbuddy',
                       id: 'add-buddy', data:{ friend_id: @user.profile_name} %>
       <% end %>
   <% end %>
 </div>
+<% else %>
+
+<% end %>

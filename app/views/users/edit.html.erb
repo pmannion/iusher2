@@ -39,7 +39,9 @@
       <%= f.password_field :password %><br />
       <br/>
       <%= f.submit "Update Details", class:"green button" %><br/><br/>
-      <%= link_to 'Back to My Profile', profile_path(@user.profile_name), class: 'btn btn-success' %>
-  <% end %>
+      <%= link_to 'Back to My Profile', profile_path(@user.profile_name), class: 'btn btn-success' %><br/>
+      <h3>Whoa ! This can not be undone</h3><br/>
+      <%= link_to 'Delete My Account', @user, method: :delete, data: { confirm: 'Are you sure?' }, class: 'btn btn-danger' %>
+<% end %>
 </div>
 </div>

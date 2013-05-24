@@ -1,0 +1,22 @@
+<div id="center">
+  <div id="search">
+    <h4>Find a Cinema !</h4>
+    <%= form_tag admins_path, :method => 'get' do %>
+        <%= text_field_tag :search_query,
+                           params[:search_query] %>
+        <%= submit_tag 'Search', :name => nil , class: 'btn btn-info' %>
+        </div>
+    <% end %>
+
+<div id="user-container">
+  <% @admins.each do |admins| %>
+      <div id="allusers">
+        <%= pic_for admins, size: "80x80" %><br/>
+        <%= link_to admins.branch , admins, id: 'bluestatus' %>
+      </div>
+  <% end %>
+  <div id="paginateusers">
+    <%= will_paginate @admins %>
+  </div>
+</div>
+</div>

@@ -48,6 +48,11 @@ class UsersController < ApplicationController
       redirect_to profile_path(current_user.profile_name)
     end
   end
+
+  def destroy
+    @user = User.find(params[:id])
+    @user.destroy
+  end
 end
 
 

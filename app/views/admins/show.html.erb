@@ -23,7 +23,12 @@
     <ul>
       <li class="profile-hover1"><%= image_tag("rep.png") %></li>
       <li class="profile-hover2"><%= image_tag("postcount.png") %></li>
+      <li class="profile-hover2"><%= link_to image_tag("cinemas.png"), admins_path %></li>
+      <% if current_admin %>
       <li class="profile-hover3"><%= link_to image_tag("complaints.png"), complaints_path %></li>
+       <% else %>
+      <li class="profile-hover4"><%= link_to image_tag("complaint.png"), new_complaint_path %></li>
+      <% end %>
       <li class="profile-hover5"><%= link_to image_tag("newpost.png"), new_post_path %>
     </ul>
   </div>
@@ -37,6 +42,9 @@
     ( <%= @adminpost.count %> )
   </div>
 
+  <div id="reputation">
+    ( <%= @admins.reputation_for(:votes).to_i %> )
+  </div>
 
   <div id="talking">
     <p><b>Comments</b></p>

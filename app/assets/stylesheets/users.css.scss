@@ -39,19 +39,17 @@ p {
 
 #nav li a {
   position: relative;
-
-  top:15%;
-  left: 5%;
+  left: 20%;
   font-family: "calibri";
   font-size:1.4em;
   text-decoration: none;
   color: white;
   z-index: 20;
+  top:-7px;
 }
 
 
 h2 {
-
   font-family: moiser;
   font-size: 30px;
   color:cadetblue;
@@ -146,6 +144,7 @@ h3 {
   margin-top:-4%;
   margin-left:26.1%;
   color: white;
+  text-decoration: none;
 }
 
 @-webkit-keyframes greenPulse {
@@ -210,6 +209,8 @@ h3 {
 
 a:link, a:hover, a:visited{
   color:white;
+  text-decoration: none;
+
 }
 
 .tweet span {
@@ -261,6 +262,10 @@ a:link, a:hover, a:visited{
   border-bottom: 8px solid dodgerblue;
   border-left: 6px solid  dodgerblue;
 
+}
+
+#add-buddy{
+  text-decoration: none;
 }
 
 

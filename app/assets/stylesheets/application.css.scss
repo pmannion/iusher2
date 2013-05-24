@@ -32,33 +32,10 @@ html,body{
 }
 
 
-
-
-#plain-wrapper {
-    width:80%;
-    height:px;
-    margin-top: 20px;
-    margin-left: 60px;
-
-}
-
-#main_wrapper {
-    position:absolute;
-    width:1100px;
-    height:700px;
-    margin-top: 0px;
-    margin-left: 30px;
-    border: 2px solid #808080;
-    background-image: url("bluebg1.jpg");
-    background-repeat:no-repeat;
-    -webkit-border-radius: 10px;
-    z-index: 10000;
-}
-
 #nav {
     width:100%;
     background-color:cadetblue;
-    height:60px;
+    height:70px;
     border-bottom:10px solid #d3d3d3;
 }
 
@@ -78,6 +55,7 @@ html,body{
     position:relative;
     display: inline;
     padding:0.5%;
+
 
    }
 
@@ -171,7 +149,71 @@ html,body{
     font-size: 1.5em;
 }
 
+.connectPulse{
+  from { background-color: #749a02; -webkit-box-shadow: 0 0 9px #333; }
+  50% { background-color: #91bd09; -webkit-box-shadow: 0 0 18px #91bd09; }
+  to { background-color: #749a02; -webkit-box-shadow: 0 0 9px #333; }
+}
+.connectbuddy {
 
+  -webkit-animation-name: connectPulse;
+  -webkit-animation-duration: 2s;
+  -webkit-animation-iteration-count: infinite;
+  -webkit-border-radius: 8px;
+  background-color: #7cfc00;
+  font-size: 1em ;
+  font-family: arial;
+  color:white;
+  padding: 0.5em;
+  text-decoration:blink;
+  width:5%;
+
+
+}
+
+
+.buddyconnected {
+
+  -webkit-animation-name: connectPulse;
+  -webkit-animation-duration: 2s;
+  -webkit-animation-iteration-count: infinite;
+  -webkit-border-radius: 8px;
+  background-color: green;
+  font-size: 1em ;
+  font-family: arial;
+  color:white;
+  padding: 0.5em;
+  text-decoration:none;
+  width:5%;
+
+}
+
+
+#rules p {
+  position:absolute;
+  line-height: 1.2;
+  margin-left:50%;
+  margin-top:4%;
+  font-family: tahoma;
+  font-size: 2em;
+  width:15%;
+  height:50%;
+
+}
+
+#rulehead{
+  postion:absolute;
+  margin-left:50%;
+
+}
+
+#logo{
+  color:white;
+  margin-left:5%;
+  font-size:3em;
+  font-family: tahoma;
+
+}
 
 
 

@@ -2,7 +2,6 @@
     <% if @post.errors.any? %>
         <div id="error_explanation">
           <h3><%= pluralize(@post.errors.count, "error") %> prohibited this post from being saved:</h3>
-
           <ul>
             <% @post.errors.full_messages.each do |msg| %>
                 <li><%= msg %></li>
@@ -11,11 +10,7 @@
         </div>
     <% end %>
     <div class="field">
-
       <%= f.text_area :content %>
-
-
     </div>
     <%= f.submit "Submit New Post", class: "post button" %>
-
 <% end %>

@@ -16,7 +16,7 @@ class ContactsController < ApplicationController
     @contact = Contact.find(params[:id])
 
     respond_to do |format|
-      format.html # show.html.erb
+      format.html # index.html.erb
       format.json { render json: @contact }
     end
   end

@@ -25,7 +25,7 @@ class PostsController < ApplicationController
       redirect_to profile_path(current_user.profile_name)
     else
     respond_to do |format|
-      format.html # show.html.erb
+      format.html # index.html.erb
       format.json { render json: @post }
     end
   end

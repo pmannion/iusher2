@@ -1,10 +1,11 @@
+<% if current_user.profile_name == "paul" %>
 <div id="center">
-  <% if current_user.profile_name == "paul" %>
+
   <h2>My Inquiries</h2>
   <div id ="complaint-list">
     <table>
       <tr>
-        <th>Qustion ID</th>
+        <th>Received</th>
         <th>Name</th>
         <th>Email</th>
         <th>Category</th>
@@ -12,22 +13,29 @@
 
 <tr class= "<%= cycle('list_line_odd', 'list_line_even') %>">
  <% @question.each do |question| %>
-  <td><%= question.id %></td>
+  <td><%= question.created_at.strftime("%d %b. %Y") %></td>
   <td><%= question.name %></td>
   <td><%= question.email %></td>
   <td><%= question.category %></td>
-  <td><%= link_to 'Show', question, id: 'bluestatus' %></td>
-  <td><%= link_to 'Destroy', question, method: :delete, data: { confirm: 'Are you sure?' }, id: 'red-status' %></td>
+  <td><%= link_to 'Show', question, class: 'btn btn-success' %></td>
+  <td><%= link_to 'Destroy', question, method: :delete, data: { confirm: 'Are you sure?' },class: 'btn btn-danger' %></td>
  </tr>
 <% end %>
 </table>
 </div>
- <% else %>
-
-        <p id="intro1"><span>Whoops !</span><br/>
-          Nothing to see<br/> on this page</p>
-        <p id="subintro1">Get me<br/>Out of here</p>
-        <%= link_to "Home", root_path, class: "green button1" %>
-
+   <div id="paginate">
+     <%= will_paginate @question %>
+   </div>
   <% end %>
 </div>
+
+
+<% if !current_user  %>
+    <div id="center">
+      <p id="intro1"><span>Whoops !</span><br/>
+        You must have a regular<br/> user profile</p>
+      <p id="subintro1">to see<br/>this page</p>
+      <%= link_to "Sign up", root_path, class: "green button1" %>
+      <!--use this link to return to the current users profile path-->
+    </div>
+<% end %>

@@ -1,35 +1,25 @@
-<% if current_user %>
-  <h2>Rules of Posting</h2>
+<% if current_user || current_admin %>
+  <h2 id ="rulehead">Rules of Posting</h2>
     <div id="rules">
-      <p>Be nice, no hassle or bullying allowed</p><br/>
-      <p>It's a movie site, so keep it all about the movie talk</p><br>
-      <p>No movie spoilers, Don't be that guy !</p><br/>
-      <p>When watching a movie use iUsher for complaints only</p><br/>
+      <p>Be nice, no hassle or bullying allowed<br/><br/>
+      It's a movie site, so keep it all about the movie talk<br/><br>
+      No movie spoilers, Don't be that guy !<br/><br/>
+      When watching a movie use iUsher for complaints only
     </div>
 
   <div id="edit-complaint">
     <%= render 'form' %>
-    <%= link_to 'Back', profile_path(current_user.profile_name) %>
+      <% if current_user %>
+        <%= link_to 'Back', profile_path(current_user.profile_name) %>
+      <% else if current_admin %>
+        <%= link_to 'Back', current_admin %>
+      <% end %>
+    <% end %>
   </div>
 
-<% else if current_admin %>
-  <h2>Rules of Posting</h2>
-     <div id="rules">
-       <p>Be nice, no hassle or bullying allowed</p><br/>
-       <p>It's a movie site, so keep it all about the movie talk</p><br>
-       <p>No movie spoilers, Don't be that guy !</p><br/>
-       <p>When watching a movie use iUsher for complaints only</p><br/>
-     </div>
-
-     <div id="edit-complaint">
-       <%= render 'form' %>
-       <%= link_to 'Back', current_admin %>
-     </div>
-  <% end %>
 <% end %>
 
-
-<% if !current_admin || !current_user  %>
+<% if !current_user && !current_admin %>
     <div id="center">
       <p id="intro1"><span>Whoops !</span><br/>
         Nothing to see<br/> on this page</p>

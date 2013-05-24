@@ -1,1 +1,22 @@
-<%= render 'form' %>
+<% if current_user %>
+    <h2 id= "rulehead">Rules of Posting</h2>
+    <div id="rules">
+      <p>Be nice, no hassle or bullying allowed<br/><br/>
+      It's a movie site, so keep it all about the movie talk<br><br/>
+      No movie spoilers, Don't be that guy !<br/><br/>
+      When watching a movie use iUsher for complaints only</p><br/>
+    </div>
+
+    <div id="edit-complaint">
+      <%= render 'form' %>
+      <%= link_to 'Back', profile_path(current_user.profile_name) %>
+    </div>
+<% else %>
+    <div id="center">
+      <p id="intro1"><span>Whoops !</span><br/>
+        Nothing to see<br/> on this page</p>
+      <p id="subintro1">Get me<br/>Out of here</p>
+      <%= link_to "Home", root_path, class: "green button1" %>
+      <!--use this link to return to the current users profile path-->
+    </div>
+<% end %>

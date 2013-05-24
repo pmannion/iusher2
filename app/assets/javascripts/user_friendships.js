@@ -2,9 +2,8 @@
 // removes stage of confirming if you want to a buddy
 
 
-$(document).ready(function(){
-
-    $('#add-buddy').click(function(event){
+$(document).on('page:load',function(){
+  $('#add-buddy').click(function(event){
     event.preventDefault();
     var addBuddyBtn = $(this);
         $.ajax({
@@ -13,10 +12,9 @@ $(document).ready(function(){
             type: 'POST',
         success: function(e) {
         addBuddyBtn.hide();
-        $('#connect').html("<a href='#' class= 'btn btn-success'>Requested</a>");
+        $('#connect').html("<a href='#' class= 'buddyconnected'>Requested</a>");
     }
         });
     });
-
-
 });
+
