@@ -6,7 +6,7 @@
       <% else if @current_user.friends.include?(@user) %>
          <%= link_to "Connected ", "#", class: "btn btn-warning" %>
       <% else %>
-         <%= link_to "Add Buddy ", new_user_friendship_path(friend_id: @user.profile_name) , class: 'connectbuddy',
+         <%= link_to "Add Buddy ", new_user_friendship_path(friend_id: @user.profile_name) , class: 'btn btn-success',
                       id: 'add-buddy', data:{ friend_id: @user.profile_name} %>
       <% end %>
   <% end %>
