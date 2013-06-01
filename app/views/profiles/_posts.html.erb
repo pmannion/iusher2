@@ -19,7 +19,7 @@
              | <%= link_to 'Delete', post, method: :delete, data: { confirm: 'Are you sure?' }, id: 'red-status' %> |
             <% end %>
               <%= link_to "Reply", new_post_comment_path(post), id: 'bluestatus' %> |
-            <%= link_to "Show Replies", post_comments_path(post), id: 'bluestatus' %> <%= @comments.count %>|
+            <%= link_to "Show Replies", post_comments_path(post), id: 'bluestatus' %> |
            </span>
         </div>
       </div>
