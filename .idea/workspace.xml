@@ -48,6 +48,7 @@
     <file path="/user_friendships.js" changelist="7b5e8f9d-baea-42e9-891e-106b915d9c1d" time="1370085485907" ignored="false" />
     <file path="/_connect.html.erb" changelist="7b5e8f9d-baea-42e9-891e-106b915d9c1d" time="1370085522226" ignored="false" />
     <file path="$PROJECT_DIR$/db/schema.rb" changelist="7b5e8f9d-baea-42e9-891e-106b915d9c1d" time="1370088885900" ignored="false" />
+    <file path="/production.rb" changelist="7b5e8f9d-baea-42e9-891e-106b915d9c1d" time="1370090487675" ignored="false" />
     <option name="TRACKING_ENABLED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -67,10 +68,19 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="production.rb" pinned="false" current="false" current-in-tab="false">
+      <file leaf-file-name="production.rb" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/config/environments/production.rb">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="32" column="58" selection-start="1029" selection-end="1029" vertical-scroll-proportion="0.0">
+            <state line="86" column="38" selection-start="3198" selection-end="3198" vertical-scroll-proportion="0.8484849">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="development.rb" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/config/environments/development.rb">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="3" column="0" selection-start="35" selection-end="337" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
@@ -103,10 +113,10 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="show.html.erb" pinned="false" current="true" current-in-tab="true">
+      <file leaf-file-name="show.html.erb" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/views/admins/show.html.erb">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="57" column="0" selection-start="1604" selection-end="1604" vertical-scroll-proportion="0.66283524">
+            <state line="57" column="0" selection-start="1604" selection-end="1604" vertical-scroll-proportion="-13.307693">
               <folding />
             </state>
           </provider>
@@ -143,15 +153,6 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="_connect.html.erb" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/views/profiles/_connect.html.erb">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="16" column="86" selection-start="676" selection-end="676" vertical-scroll-proportion="-10.461538">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
       <file leaf-file-name="new.html.erb" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/views/user_friendships/new.html.erb">
           <provider selected="true" editor-type-id="text-editor">
@@ -178,7 +179,6 @@
         <option value="$PROJECT_DIR$/app/controllers/posts_controller.rb" />
         <option value="$PROJECT_DIR$/app/views/profiles/show.html.erb" />
         <option value="$PROJECT_DIR$/app/controllers/user_friendships_controller.rb" />
-        <option value="$PROJECT_DIR$/config/environments/production.rb" />
         <option value="$PROJECT_DIR$/app/assets/javascripts/user_friendships.js" />
         <option value="$PROJECT_DIR$/app/views/profiles/_connect.html.erb" />
         <option value="$PROJECT_DIR$/app/views/user_friendships/new.html.erb" />
@@ -187,6 +187,7 @@
         <option value="$PROJECT_DIR$/app/views/layouts/application.html.erb" />
         <option value="$PROJECT_DIR$/app/views/users/new.html.erb" />
         <option value="$PROJECT_DIR$/app/views/admins/show.html.erb" />
+        <option value="$PROJECT_DIR$/config/environments/production.rb" />
       </list>
     </option>
   </component>
@@ -861,13 +862,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/config/environments/development.rb">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="3" column="0" selection-start="35" selection-end="337" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/views/profiles/_connect.html.erb">
       <provider selected="true" editor-type-id="text-editor">
         <state line="16" column="86" selection-start="676" selection-end="676" vertical-scroll-proportion="-10.461538">
@@ -907,13 +901,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/config/environments/production.rb">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="32" column="58" selection-start="1029" selection-end="1029" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/views/layouts/_header.html.erb">
       <provider selected="true" editor-type-id="text-editor">
         <state line="15" column="63" selection-start="652" selection-end="652" vertical-scroll-proportion="-5.8846154">
@@ -937,7 +924,21 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/app/views/admins/show.html.erb">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="57" column="0" selection-start="1604" selection-end="1604" vertical-scroll-proportion="0.66283524">
+        <state line="57" column="0" selection-start="1604" selection-end="1604" vertical-scroll-proportion="-13.307693">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/config/environments/development.rb">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="3" column="0" selection-start="35" selection-end="337" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/config/environments/production.rb">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="86" column="38" selection-start="3198" selection-end="3198" vertical-scroll-proportion="0.8484849">
           <folding />
         </state>
       </provider>
