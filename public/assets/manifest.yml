@@ -31,6 +31,8 @@ greygrad.jpg: greygrad-114bfb943baca8ace32983218e989717.jpg
 greygrad/index.jpg: greygrad-114bfb943baca8ace32983218e989717.jpg
 logo.PNG: logo-595adca27fc58bdefebde93ee32eb0f6.PNG
 logo/index.PNG: logo-595adca27fc58bdefebde93ee32eb0f6.PNG
+muppets.mp4: muppets-2e1a53db02b5266cc178ba2fb8b2bccf.mp4
+muppets/index.mp4: muppets-2e1a53db02b5266cc178ba2fb8b2bccf.mp4
 newpost.png: newpost-794ba0269c553a88aa5fa0cdbf6939fc.png
 newpost/index.png: newpost-794ba0269c553a88aa5fa0cdbf6939fc.png
 odeon.jpg: odeon-99ba67c893be9a1928d1c68f12d9f0c0.jpg
@@ -63,8 +65,6 @@ application.js: application-13b2fcc1394557400749fb321b417f09.js
 application/index.js: application-13b2fcc1394557400749fb321b417f09.js
 application.css: application-1714da4068f5c0f24d5e3823dc64e8f5.css
 application/index.css: application-1714da4068f5c0f24d5e3823dc64e8f5.css
-muppets.mp4: muppets-2e1a53db02b5266cc178ba2fb8b2bccf.mp4
-muppets/index.mp4: muppets-2e1a53db02b5266cc178ba2fb8b2bccf.mp4
 masonry/loader.gif: masonry/loader-e2a65b9489a6a7d066dd12455c270cc5.gif
 masonry/loader/index.gif: masonry/loader-e2a65b9489a6a7d066dd12455c270cc5.gif
 glyphicons-halflings-white.png: glyphicons-halflings-white-6cccd17a7aed91dbc0157d343c68c0d9.png
