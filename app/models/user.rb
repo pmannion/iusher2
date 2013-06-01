@@ -15,7 +15,8 @@ class User < ActiveRecord::Base
            foreign_key: :user_id,
            conditions: { state: 'pending' }, dependent: :destroy
   has_many :pending_friends, through: :pending_user_friendships, source: :friend, dependent: :destroy
-  has_reputation :votes, source: {reputation: :votes, of: :posts}, aggregated_by: :sum, dependent: :destroy
+  has_reputation :votes, source: {reputation: :votes, of: :posts}, aggregated_by: :sum
+
   has_secure_password
 
   #------- callbacks ----------#
