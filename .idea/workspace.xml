@@ -9,7 +9,7 @@
     <file path="/scaffolds.css.scss" changelist="7b5e8f9d-baea-42e9-891e-106b915d9c1d" time="1364222143589" ignored="false" />
     <file path="/users.css.scss" changelist="7b5e8f9d-baea-42e9-891e-106b915d9c1d" time="1364395079889" ignored="false" />
     <file path="/_header.html.erb" changelist="7b5e8f9d-baea-42e9-891e-106b915d9c1d" time="1365339956586" ignored="false" />
-    <file path="/new.html.erb" changelist="7b5e8f9d-baea-42e9-891e-106b915d9c1d" time="1370093239929" ignored="false" />
+    <file path="/new.html.erb" changelist="7b5e8f9d-baea-42e9-891e-106b915d9c1d" time="1370094630685" ignored="false" />
     <file path="/posts.css.scss" changelist="7b5e8f9d-baea-42e9-891e-106b915d9c1d" time="1364301351326" ignored="false" />
     <file path="/_form.html.erb" changelist="7b5e8f9d-baea-42e9-891e-106b915d9c1d" time="1364659636059" ignored="false" />
     <file path="/complaint.rb" changelist="7b5e8f9d-baea-42e9-891e-106b915d9c1d" time="1365339126576" ignored="false" />
@@ -117,7 +117,7 @@
       <file leaf-file-name="new.html.erb" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/app/views/users/new.html.erb">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="53" column="79" selection-start="1449" selection-end="1449" vertical-scroll-proportion="0.9214953">
+            <state line="48" column="27" selection-start="1305" selection-end="1305" vertical-scroll-proportion="0.7626168">
               <folding />
             </state>
           </provider>
@@ -909,7 +909,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/app/views/users/new.html.erb">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="53" column="79" selection-start="1449" selection-end="1449" vertical-scroll-proportion="0.9214953">
+        <state line="48" column="27" selection-start="1305" selection-end="1305" vertical-scroll-proportion="0.7626168">
           <folding />
         </state>
       </provider>
