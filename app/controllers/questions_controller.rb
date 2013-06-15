@@ -14,12 +14,17 @@ class QuestionsController < ApplicationController
 
   def create
     @question = Question.new(params[:question])
-    if @question.save
-      flash[:success] = 'Thank you for your inquiry'
-      redirect_to root_path
+    respond_to do |format|
+      if @question.save
+        format.html { redirect_to root_path, notice: 'Thank you for your inquiry'}
+        format.json { render json: @question, status: :created, location: @question }
+      else
+        format.html { render action: "new" }
+        format.json { render json: @question.errors, status: :unprocessable_entity  }
+      end
     end
-
   end
+
 
   def destroy
     @question = Question.find(params[:id])
