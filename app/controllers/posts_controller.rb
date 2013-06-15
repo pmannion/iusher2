@@ -35,8 +35,8 @@ end
   # GET /posts/new.json
   def new
   @user = User.find_by_profile_name(params[:id])
-  unless @user
-    @post = Post.new
+    unless @user
+      @post = Post.new
     false
   end
   respond_to do |format|
@@ -47,7 +47,12 @@ end
 
   # GET /posts/1/edit
   def edit
-    @post = Post.find(params[:id])
+    if current_user
+      @post = Post.find(params[:id])
+    else
+      flash[:notice] = 'invalid action'
+      redirect_to root_path
+    end
   end
 
   # POST /posts

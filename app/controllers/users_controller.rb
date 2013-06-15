@@ -1,17 +1,13 @@
 class UsersController < ApplicationController
 
   def index
-      @user = User.search(params[:search_query]).order('created_at DESC').paginate(:per_page => 20, :page => params[:page])
-
-      #@list = @user.paginate(per_page: 2,:page => params[:page],
-      #                      :order => 'created_at DESC')
+    if current_user
+     @user = User.search(params[:search_query]).order('created_at DESC').paginate(:per_page => 20, :page => params[:page])
      @user_friendships = current_user.user_friendships.all
-      respond_to do |format|
-        format.html # index.html.erb
-        format.json { render json: @user }
-        format.js
-
-      end
+    else
+      flash[:notice] = 'You must be logged in'
+      redirect_to root_path
+    end
   end
 
   def new
@@ -37,7 +33,12 @@ class UsersController < ApplicationController
   end
 
   def edit
-    @user = User.find_by_profile_name(params[:id])
+    if current_user
+      @user = User.find_by_profile_name(params[:id])
+    else
+      flash[:notice] = 'invalid action'
+      redirect_to root_path
+    end
   end
 
   def update

@@ -34,7 +34,12 @@ class AdminsController < ApplicationController
   end
 
   def edit
-    @admin = Admin.find(params[:id])
+    if current_admin
+      @admin = Admin.find(params[:id])
+    else
+      flash[:notice] = 'invalid action'
+      redirect_to root_path
+    end
   end
 
   def update
