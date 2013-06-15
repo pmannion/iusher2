@@ -1,7 +1,7 @@
 class UsersController < ApplicationController
 
   def index
-      @user = User.search(params[:search_query]).order('created_at DESC').paginate(:per_page => 5, :page => params[:page])
+      @user = User.search(params[:search_query]).order('created_at DESC').paginate(:per_page => 20, :page => params[:page])
 
       #@list = @user.paginate(per_page: 2,:page => params[:page],
       #                      :order => 'created_at DESC')

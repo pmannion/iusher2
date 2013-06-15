@@ -1,8 +1,7 @@
 class AdminsController < ApplicationController
 
   def index
-    @admins = Admin.search(params[:search_query]).order('created_at DESC').paginate(:per_page => 20, :page => params[:page])
-
+    @admins = Admin.search(params[:search_query]).order('created_at DESC').paginate(:per_page => 40, :page => params[:page])
   end
 
 
